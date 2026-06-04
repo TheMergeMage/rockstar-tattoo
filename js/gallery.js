@@ -1,12 +1,15 @@
 /* gallery.js — Photo grid filter + GLightbox initialization */
 
 var galleryImages = [
-  { src: 'https://placehold.co/600x800/1a1a1a/666?text=Traditional', alt: 'Traditional American eagle tattoo, bold outlines and classic color fill', style: 'traditional' },
-  { src: 'https://placehold.co/600x800/1a1a1a/666?text=Realism', alt: 'Realism portrait tattoo with fine detail shading', style: 'realism' },
-  { src: 'https://placehold.co/600x800/1a1a1a/666?text=Geometric', alt: 'Geometric mandala pattern tattoo with precise linework', style: 'geometric' },
-  { src: 'https://placehold.co/600x800/1a1a1a/666?text=Black+Grey', alt: 'Black and grey rose tattoo with soft shading', style: 'black-grey' },
-  { src: 'https://placehold.co/600x800/1a1a1a/666?text=Color', alt: 'Full color watercolor-style butterfly tattoo', style: 'color' },
-  { src: 'https://placehold.co/600x800/1a1a1a/666?text=Piercings', alt: 'Body piercing jewelry on ear with gold and silver rings', style: 'piercings' },
+  { src: 'assets/images/homepage-gallery/Tempt_Daisy_Anchor.jpg', alt: 'Daisy anchor tattoo with traditional styling', style: 'traditional' },
+  { src: 'assets/images/homepage-gallery/Tempt_Hummingbird_before-and-after.jpg', alt: 'Hummingbird tattoo with realistic detail and shading', style: 'realism' },
+  { src: 'assets/images/homepage-gallery/Tempt_Aries.jpg', alt: 'Aries zodiac geometric pattern tattoo', style: 'geometric' },
+  { src: 'assets/images/homepage-gallery/Tempt_Skulls.jpg', alt: 'Black and grey skull tattoo artwork', style: 'black-grey' },
+  { src: 'assets/images/homepage-gallery/Tempt_Colored_Garden.jpg', alt: 'Full color garden flower tattoo design', style: 'color' },
+  { src: 'assets/images/homepage-gallery/Tempt_Peonies.jpg', alt: 'Colorful peony flower tattoo', style: 'color' },
+  { src: 'assets/images/homepage-gallery/Tempt_Koi.jpg', alt: 'Traditional Japanese koi fish tattoo', style: 'traditional' },
+  { src: 'assets/images/homepage-gallery/Tempt_Snake_Sleeve.jpg', alt: 'Black and grey snake sleeve tattoo', style: 'black-grey' },
+  { src: 'assets/images/homepage-gallery/Tempt+3_pic_sleeve.jpg', alt: 'Multi-image sleeve tattoo collection', style: 'geometric' },
 ];
 
 function filterImages(images, style) {
