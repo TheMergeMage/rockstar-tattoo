@@ -1,0 +1,94 @@
+/* ── Promotions Page ── */
+.promotions-page {
+  padding: var(--space-lg) var(--space-md);
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.promotions-page h1 {
+  margin-bottom: var(--space-sm);
+}
+
+.promotions-page .page-subtitle {
+  color: var(--color-silver);
+  margin-bottom: var(--space-lg);
+}
+
+/* ── Promo State Container ── */
+#promo-tile-container {
+  min-height: 200px;
+}
+
+/* ── Active Promo Card ── */
+.promo-tile {
+  background-color: #141414;
+  border: 2px solid var(--color-red);
+  border-radius: 4px;
+  padding: var(--space-md) var(--space-lg);
+}
+
+.promo-tile h3 {
+  color: var(--color-red);
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  margin-bottom: var(--space-sm);
+}
+
+.promo-tile p {
+  margin-bottom: var(--space-md);
+  font-size: 1rem;
+}
+
+.promo-image {
+  max-width: 100%;
+  border-radius: 4px;
+  margin-bottom: var(--space-md);
+}
+
+/* ── Check Back Soon ── */
+.promo-empty-msg {
+  color: var(--color-silver);
+  font-size: 1.1rem;
+  padding: var(--space-lg) 0;
+}
+
+/* ── Countdown ── */
+.countdown-display {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+  margin: var(--space-md) 0;
+}
+
+.countdown-unit {
+  text-align: center;
+  min-width: 60px;
+}
+
+.countdown-value {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: 700;
+  color: var(--color-red);
+  line-height: 1;
+}
+
+.countdown-label {
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-silver);
+  margin-top: 6px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 414px) {
+  .countdown-display {
+    gap: var(--space-sm);
+  }
+  .countdown-unit {
+    min-width: 48px;
+  }
+}

@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  color: var(--color-white);
+  background-color: var(--color-black);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; }
+h2 { font-size: clamp(1.5rem, 4vw, 2.5rem); font-weight: 600; }
+h3 { font-size: clamp(1.1rem, 2.5vw, 1.5rem); font-weight: 600; }
+
+p {
+  line-height: var(--line-height-base);
+  color: var(--color-silver);
+}
+
+.text-red    { color: var(--color-red); }
+.text-silver { color: var(--color-silver); }
+.text-white  { color: var(--color-white); }
+
+/* Buttons */
+.btn-primary,
+.btn-secondary,
+.btn-book,
+.btn-call {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.75rem 1.75rem;
+  border-radius: 2px;
+  transition: background-color var(--transition-fast), color var(--transition-fast),
+              transform var(--transition-fast);
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary,
+.btn-book {
+  background-color: var(--color-red);
+  color: var(--color-white);
+}
+
+.btn-primary:hover,
+.btn-book:hover {
+  background-color: #aa0000;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-white);
+  border: 2px solid var(--color-silver);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-silver);
+  color: var(--color-black);
+}
+
+.btn-call {
+  background-color: var(--color-red);
+  color: var(--color-white);
+  width: 100%;
+  text-align: center;
+}
+
+.btn-call:hover {
+  background-color: #aa0000;
+}

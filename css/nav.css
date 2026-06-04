@@ -1,0 +1,65 @@
+/* ── Mobile Nav Overlay ── */
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.97);
+  z-index: var(--z-overlay);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  transform: translateX(100%);
+  transition: transform var(--transition-base);
+  overflow-y: auto;
+}
+
+.nav-overlay.nav-open {
+  transform: translateX(0);
+}
+
+.nav-overlay nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.nav-overlay nav a {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-white);
+  transition: color var(--transition-fast);
+}
+
+.nav-overlay nav a:hover {
+  color: var(--color-red);
+}
+
+/* Close button */
+.nav-close {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  background: none;
+  border: none;
+  color: var(--color-silver);
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+  padding: var(--space-xs);
+}
+
+.nav-close:hover {
+  color: var(--color-white);
+  transform: rotate(90deg);
+}
+
+/* Book Now inside overlay */
+.nav-overlay .btn-book {
+  margin-top: var(--space-sm);
+}

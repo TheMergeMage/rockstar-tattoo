@@ -1,0 +1,110 @@
+/* ── Promo Bar ── */
+.promo-bar {
+  background-color: var(--color-red);
+  color: var(--color-white);
+  text-align: center;
+  padding: var(--space-xs) var(--space-sm);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  display: none; /* shown by JS when promo is active */
+}
+
+.promo-bar.is-visible {
+  display: block;
+}
+
+.promo-bar a {
+  color: var(--color-white);
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+/* ── Sticky Header ── */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
+  height: var(--header-height);
+  background-color: var(--color-black);
+  border-bottom: 1px solid rgba(192, 192, 192, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-md);
+}
+
+.header-logo {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+/* ── Book Now CTA ── */
+.btn-book {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.8rem;
+}
+
+/* ── Desktop Nav (hidden on mobile) ── */
+.header-nav {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .header-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+  }
+
+  .header-nav a {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-silver);
+    transition: color var(--transition-fast);
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+  }
+
+  .header-nav a:hover,
+  .header-nav a.active {
+    color: var(--color-white);
+    border-bottom-color: var(--color-red);
+  }
+}
+
+/* ── Hamburger (visible on mobile only) ── */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-white);
+  transition: transform var(--transition-base), opacity var(--transition-fast);
+}
+
+@media (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+/* ── Header actions wrapper ── */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}

@@ -1,0 +1,99 @@
+/* ── Contact Page ── */
+.contact-page {
+  padding: var(--space-lg) var(--space-md);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.contact-page h1 {
+  text-align: center;
+  margin-bottom: var(--space-sm);
+}
+
+.contact-intro {
+  text-align: center;
+  color: var(--color-silver);
+  margin-bottom: var(--space-lg);
+}
+
+/* ── Two-column layout on desktop ── */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+@media (min-width: 768px) {
+  .contact-layout {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+/* ── Wix Form Embed ── */
+.wix-form-embed {
+  min-height: 400px;
+  background-color: #141414;
+  border: 1px dashed rgba(192, 192, 192, 0.3);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+  color: var(--color-silver);
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* ── Info Block ── */
+.contact-info-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.contact-detail {
+  background-color: #141414;
+  border: 1px solid rgba(192, 192, 192, 0.12);
+  border-radius: 4px;
+  padding: var(--space-md);
+}
+
+.contact-detail h2 {
+  font-size: 0.9rem;
+  color: var(--color-red);
+  margin-bottom: var(--space-xs);
+}
+
+.contact-detail p,
+.contact-detail a {
+  font-size: 0.95rem;
+  color: var(--color-silver);
+}
+
+.contact-detail a:hover {
+  color: var(--color-white);
+}
+
+/* ── Map Iframe ── */
+.map-container {
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(192, 192, 192, 0.12);
+}
+
+.map-container iframe {
+  display: block;
+  width: 100%;
+  height: 300px;
+  border: none;
+}
+
+@media (min-width: 768px) {
+  .map-container iframe {
+    height: 400px;
+  }
+}

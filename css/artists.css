@@ -1,0 +1,94 @@
+/* ── Artists Page ── */
+.artists-page {
+  padding: var(--space-lg) var(--space-md);
+}
+
+.artists-page h1 {
+  text-align: center;
+  margin-bottom: var(--space-sm);
+}
+
+.artists-page .page-subtitle {
+  text-align: center;
+  color: var(--color-silver);
+  margin-bottom: var(--space-lg);
+}
+
+/* ── Artist Cards Grid ── */
+.artists-grid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+@media (min-width: 1024px) {
+  .artists-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ── Artist Card ── */
+.artist-card {
+  background-color: #141414;
+  border: 1px solid rgba(192, 192, 192, 0.15);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color var(--transition-fast);
+}
+
+.artist-card:hover {
+  border-color: var(--color-red);
+}
+
+.artist-card img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  display: block;
+}
+
+.artist-card-body {
+  padding: var(--space-sm) var(--space-sm) var(--space-md);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: var(--space-xs);
+}
+
+.artist-card h2 {
+  font-size: 1.1rem;
+  color: var(--color-white);
+}
+
+.artist-specialty {
+  display: inline-block;
+  background-color: var(--color-red);
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+}
+
+.artist-experience {
+  font-size: 0.8rem;
+  color: var(--color-silver);
+}
+
+.artist-bio {
+  font-size: 0.875rem;
+  flex: 1;
+}
+
+.artist-card .btn-secondary {
+  margin-top: auto;
+  text-align: center;
+  width: 100%;
+  font-size: 0.8rem;
+}

@@ -1,0 +1,103 @@
+/* ── Gallery Page ── */
+.gallery-page {
+  padding: var(--space-lg) var(--space-md);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.gallery-page h1 {
+  margin-bottom: var(--space-md);
+  text-align: center;
+}
+
+/* ── Filter Bar ── */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  justify-content: center;
+  margin-bottom: var(--space-md);
+}
+
+.filter-btn {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.4rem 1rem;
+  border: 1px solid rgba(192, 192, 192, 0.3);
+  background-color: transparent;
+  color: var(--color-silver);
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background-color var(--transition-fast), color var(--transition-fast),
+              border-color var(--transition-fast);
+}
+
+.filter-btn:hover {
+  border-color: var(--color-silver);
+  color: var(--color-white);
+}
+
+.filter-btn.active,
+.filter-btn[aria-pressed="true"] {
+  background-color: var(--color-red);
+  border-color: var(--color-red);
+  color: var(--color-white);
+}
+
+.filter-btn:focus-visible {
+  outline: 2px solid var(--color-silver);
+  outline-offset: 3px;
+}
+
+/* ── Photo Grid ── */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xs);
+}
+
+@media (min-width: 600px) {
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.gallery-item {
+  display: block;
+  overflow: hidden;
+  border-radius: 2px;
+  position: relative;
+}
+
+.gallery-item img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  transition: transform var(--transition-base);
+  display: block;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.04);
+}
+
+.gallery-item.hidden {
+  display: none;
+}
+
+/* ── GLightbox overrides ── */
+.glightbox-container .gslide-image img {
+  background-color: var(--color-black);
+}
+
+.glightbox-button svg path {
+  fill: var(--color-white);
+}
