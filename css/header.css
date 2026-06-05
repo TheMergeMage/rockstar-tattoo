@@ -46,12 +46,6 @@
   }
 }
 
-/* ── Book Now CTA ── */
-.btn-book {
-  padding: 0.5rem 1.25rem;
-  font-size: 0.8rem;
-}
-
 /* ── Desktop Nav (hidden on mobile) ── */
 .header-nav {
   display: none;
@@ -95,11 +89,13 @@
     position: relative;
     display: flex;
     align-items: center;
+    margin: -0.75rem 0;
+    padding: 0.75rem 0;
   }
 
   .nav-dropdown-menu {
     position: absolute;
-    top: calc(100% + 0.6rem);
+    top: 100%;
     left: 0;
     min-width: 15rem;
     display: flex;
@@ -132,6 +128,15 @@
   .nav-item-dropdown:hover .nav-dropdown-menu,
   .nav-item-dropdown:focus-within .nav-dropdown-menu,
   .nav-item-dropdown.is-open .nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .header-nav .nav-item-dropdown:hover > .nav-dropdown-menu,
+  .header-nav .nav-item-dropdown:focus-within > .nav-dropdown-menu,
+  .header-nav .nav-item-dropdown.is-open > .nav-dropdown-menu {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);

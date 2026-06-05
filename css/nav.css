@@ -102,7 +102,3 @@
   transform: rotate(90deg);
 }
 
-/* Book Now inside overlay */
-.nav-overlay .btn-book {
-  margin-top: var(--space-sm);
-}

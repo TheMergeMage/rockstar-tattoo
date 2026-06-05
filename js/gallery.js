@@ -1,52 +1,36 @@
-/* gallery.js — Photo grid filter + GLightbox initialization */
-
-var galleryImages = [
-  { src: 'assets/images/homepage-gallery/Tempt_Daisy_Anchor.jpg', alt: 'Daisy anchor tattoo with traditional styling', style: 'traditional' },
-  { src: 'assets/images/homepage-gallery/Tempt_Hummingbird_before-and-after.jpg', alt: 'Hummingbird tattoo with realistic detail and shading', style: 'realism' },
-  { src: 'assets/images/homepage-gallery/Tempt_Aries.jpg', alt: 'Aries zodiac geometric pattern tattoo', style: 'geometric' },
-  { src: 'assets/images/homepage-gallery/Tempt_Skulls.jpg', alt: 'Black and grey skull tattoo artwork', style: 'black-grey' },
-  { src: 'assets/images/homepage-gallery/Tempt_Colored_Garden.jpg', alt: 'Full color garden flower tattoo design', style: 'color' },
-  { src: 'assets/images/homepage-gallery/Tempt_Peonies.jpg', alt: 'Colorful peony flower tattoo', style: 'color' },
-  { src: 'assets/images/homepage-gallery/Tempt_Koi.jpg', alt: 'Traditional Japanese koi fish tattoo', style: 'traditional' },
-  { src: 'assets/images/homepage-gallery/Tempt_Snake_Sleeve.jpg', alt: 'Black and grey snake sleeve tattoo', style: 'black-grey' },
-  { src: 'assets/images/homepage-gallery/Tempt+3_pic_sleeve.jpg', alt: 'Multi-image sleeve tattoo collection', style: 'geometric' },
-  { src: 'assets/images/Artist-Martin/Martin_Skeleton.JPEG', alt: 'Black and grey skeleton tattoo by Martin', style: 'black-grey' },
-  { src: 'assets/images/Artist-Martin/Martin_Mini_Skull_Lady.JPEG', alt: 'Mini skull lady tattoo by Martin', style: 'black-grey' },
-];
-
-function filterImages(images, style) {
-  if (style === 'all') return images.slice();
-  return images.filter(function (img) { return img.style === style; });
-}
+/* gallery.js - main photo grid artist filter + GLightbox initialization */
 
 (function () {
+  function buildGalleryItem(img) {
+    var a = document.createElement('a');
+    a.href = img.src;
+    a.className = 'gallery-item glightbox';
+    a.dataset.artist = img.artist;
+    a.dataset.style = img.style;
+    a.dataset.gallery = 'gallery-main';
+    a.setAttribute('data-glightbox', 'description: ' + img.alt);
+
+    var image = document.createElement('img');
+    image.src = img.src;
+    image.alt = img.alt;
+    image.loading = 'lazy';
+
+    a.appendChild(image);
+    return a;
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     var grid = document.getElementById('gallery-grid');
-    if (!grid) return;
+    if (!grid || typeof galleryImages === 'undefined') return;
 
-    /* Build grid items */
     galleryImages.forEach(function (img) {
-      var a = document.createElement('a');
-      a.href = img.src;
-      a.className = 'gallery-item glightbox';
-      a.dataset.style = img.style;
-      a.dataset.gallery = 'gallery-main';
-      a.setAttribute('data-glightbox', 'description: ' + img.alt);
-
-      var image = document.createElement('img');
-      image.src = img.src;
-      image.alt = img.alt;
-      image.loading = 'lazy';
-
-      a.appendChild(image);
-      grid.appendChild(a);
+      grid.appendChild(buildGalleryItem(img));
     });
 
-    /* Filter buttons */
-    var filterBtns = document.querySelectorAll('.filter-btn');
+    var filterBtns = document.querySelectorAll('.artist-filter-btn');
     filterBtns.forEach(function (btn) {
       btn.addEventListener('click', function () {
-        var style = btn.dataset.filter;
+        var artist = btn.dataset.artist;
 
         filterBtns.forEach(function (b) {
           b.classList.remove('active');
@@ -55,12 +39,8 @@ function filterImages(images, style) {
         btn.classList.add('active');
         btn.setAttribute('aria-pressed', 'true');
 
-        var filtered = filterImages(galleryImages, style);
-        var filteredSrcs = filtered.map(function (i) { return i.src; });
-
         grid.querySelectorAll('.gallery-item').forEach(function (item) {
-          var img = item.querySelector('img');
-          if (style === 'all' || filteredSrcs.indexOf(img.src) !== -1) {
+          if (artist === 'all' || item.dataset.artist === artist) {
             item.classList.remove('hidden');
           } else {
             item.classList.add('hidden');
@@ -69,7 +49,6 @@ function filterImages(images, style) {
       });
     });
 
-    /* GLightbox */
     if (typeof GLightbox !== 'undefined') {
       GLightbox({
         selector: '.glightbox',

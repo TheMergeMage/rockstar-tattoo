@@ -30,7 +30,6 @@ p {
 /* Buttons */
 .btn-primary,
 .btn-secondary,
-.btn-book,
 .btn-call {
   display: inline-block;
   font-family: var(--font-heading);
@@ -46,14 +45,12 @@ p {
   border: none;
 }
 
-.btn-primary,
-.btn-book {
+.btn-primary {
   background-color: var(--color-red);
   color: var(--color-white);
 }
 
-.btn-primary:hover,
-.btn-book:hover {
+.btn-primary:hover {
   background-color: #aa0000;
   transform: translateY(-1px);
 }
