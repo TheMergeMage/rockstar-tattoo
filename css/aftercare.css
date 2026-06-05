@@ -1,0 +1,127 @@
+/* ── Aftercare Page ── */
+.aftercare-page {
+  padding: var(--space-lg) var(--space-md);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.aftercare-page h1 {
+  text-align: center;
+  margin-bottom: var(--space-sm);
+}
+
+.aftercare-intro {
+  max-width: 58ch;
+  margin: 0 auto var(--space-lg);
+  text-align: center;
+  color: var(--color-silver);
+}
+
+.aftercare-switcher {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.aftercare-tab {
+  min-width: 11rem;
+  padding: 0.85rem 1.25rem;
+  border-radius: 2px;
+  border: 1px solid rgba(192, 192, 192, 0.2);
+  background-color: transparent;
+  color: var(--color-silver);
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.aftercare-tab:hover {
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.aftercare-tab:focus-visible {
+  color: var(--color-white);
+  border-color: var(--color-red);
+}
+
+.aftercare-tab.is-active {
+  background-color: var(--color-red);
+  border-color: var(--color-red);
+  color: var(--color-white);
+  transform: translateY(-1px);
+}
+
+.aftercare-panels {
+  display: block;
+}
+
+.aftercare-panel {
+  background-color: #141414;
+  border: 1px solid rgba(192, 192, 192, 0.12);
+  border-radius: 4px;
+  padding: var(--space-md);
+}
+
+.aftercare-panel h2 {
+  margin-bottom: var(--space-sm);
+  color: var(--color-red);
+  font-size: 1.15rem;
+}
+
+.aftercare-panel h3 {
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-xs);
+  font-size: 0.95rem;
+  color: var(--color-white);
+}
+
+.aftercare-panel h4 {
+  margin-top: var(--space-sm);
+  margin-bottom: var(--space-xs);
+  font-size: 0.85rem;
+  color: var(--color-silver);
+}
+
+.aftercare-panel p,
+.aftercare-panel li {
+  font-size: 0.95rem;
+}
+
+.aftercare-panel p + p {
+  margin-top: var(--space-sm);
+}
+
+.aftercare-list,
+.aftercare-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding-left: var(--space-md);
+  margin: 0;
+}
+
+.aftercare-steps {
+  list-style: decimal;
+}
+
+.aftercare-list li,
+.aftercare-steps li {
+  color: var(--color-silver);
+}
+
+.aftercare-panel > *:first-child {
+  margin-top: 0;
+}
+
+@media (min-width: 768px) {
+  .aftercare-panel {
+    padding: var(--space-lg);
+  }
+}

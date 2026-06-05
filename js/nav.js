@@ -28,17 +28,33 @@ function toggleNav(isOpen) {
   var hamburger = document.getElementById('hamburger');
   var overlay = document.getElementById('nav-overlay');
   var closeBtn = document.getElementById('nav-close');
+  var dropdownToggles = document.querySelectorAll('.nav-dropdown-toggle');
   var isOpen = false;
+
+  function setDropdownState(dropdown, open) {
+    if (!dropdown) return;
+    var toggle = dropdown.querySelector('.nav-dropdown-toggle');
+    dropdown.classList.toggle('is-open', open);
+    if (toggle) toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+
+  function closeDropdowns() {
+    document.querySelectorAll('.nav-item-dropdown.is-open').forEach(function (dropdown) {
+      setDropdownState(dropdown, false);
+    });
+  }
 
   function openNav() {
     isOpen = true;
     toggleNav(false);
+    closeDropdowns();
     trapFocus(overlay);
   }
 
   function closeNav() {
     isOpen = false;
     toggleNav(true);
+    closeDropdowns();
     if (hamburger) hamburger.focus();
   }
 
@@ -49,6 +65,15 @@ function toggleNav(isOpen) {
   if (closeBtn) {
     closeBtn.addEventListener('click', closeNav);
   }
+
+  dropdownToggles.forEach(function (toggle) {
+    toggle.addEventListener('click', function () {
+      var dropdown = toggle.closest('.nav-item-dropdown');
+      var nextOpen = !(dropdown && dropdown.classList.contains('is-open'));
+      closeDropdowns();
+      setDropdownState(dropdown, nextOpen);
+    });
+  });
 
   if (overlay) {
     /* Close when clicking on the backdrop (not on nav links) */
@@ -61,6 +86,12 @@ function toggleNav(isOpen) {
       link.addEventListener('click', closeNav);
     });
   }
+
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.nav-item-dropdown')) {
+      closeDropdowns();
+    }
+  });
 
   /* Close on back button */
   window.addEventListener('popstate', function () {
