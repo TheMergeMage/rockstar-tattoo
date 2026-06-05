@@ -3,12 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Artists | Rockstar Tattoo — Exquisite Ink &amp; Body Art</title>
-  <meta name="description" content="Meet the Rockstar Tattoo artists — world-class tattooers specializing in traditional, realism, geometric, and more. Book with your favorite artist today.">
-  <meta property="og:title" content="Artists | Rockstar Tattoo">
-  <meta property="og:description" content="Meet the Rockstar Tattoo artists — world-class tattooers. Book with your favorite artist.">
+  <title>Martin's Gallery | Rockstar Tattoo — Cultural & Custom Design Specialist</title>
+  <meta name="description" content="Browse Martin Doherty's tattoo portfolio — cultural and custom design at Rockstar Tattoo in Las Vegas. 22 years of experience.">
+  <meta property="og:title" content="Martin's Gallery | Rockstar Tattoo">
+  <meta property="og:description" content="Browse Martin's tattoo portfolio — cultural and custom design work.">
   <meta property="og:image" content="assets/images/rockstar-logo.jpg">
   <meta property="og:type" content="website">
+
+  <!-- GLightbox CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
 
   <!-- Site CSS -->
   <link rel="stylesheet" href="css/variables.css?v=logo-jpg-1">
@@ -17,7 +20,7 @@
   <link rel="stylesheet" href="css/header.css?v=logo-jpg-1">
   <link rel="stylesheet" href="css/nav.css">
   <link rel="stylesheet" href="css/footer.css?v=logo-jpg-1">
-  <link rel="stylesheet" href="css/artists.css">
+  <link rel="stylesheet" href="css/gallery.css">
 </head>
 <body>
 
@@ -32,7 +35,7 @@
     <nav class="header-nav" aria-label="Main navigation">
       <a href="index.html">Home</a>
       <a href="gallery.html">Gallery</a>
-      <a href="artists.html" class="active">Artists</a>
+      <a href="artists.html">Artists</a>
       <div class="nav-item-dropdown">
         <button type="button" class="nav-dropdown-toggle" id="aftercare-header-toggle" aria-expanded="false" aria-controls="aftercare-header-menu">
           Aftercare Instructions
@@ -76,64 +79,15 @@
   </div>
 
   <!-- Main Content -->
-  <main class="artists-page">
-    <h1>Our Artists</h1>
-    <p class="page-subtitle">World-class tattooers bringing custom work, cultural detail, and personal storytelling to every piece.</p>
-
-    <div class="artists-grid">
-
-      <article class="artist-card">
-        <a href="artist-brian.html">
-          <img src="assets/images/Artist-Brian/Brian_Lion.jpg" alt="Brian, tattoo artist specializing in color and realism at Rockstar Tattoo" width="400" height="500" loading="lazy">
-        </a>
-        <div class="artist-card-body">
-          <a href="artist-brian.html"><h2>Brian</h2></a>
-          <span class="artist-specialty">Color & Realism</span>
-          <span class="artist-experience">Expert Experience</span>
-          <p class="artist-bio">Brian is a master of color work and realistic portraiture. Specializing in vibrant, detailed pieces that capture emotion and depth. Known for creating stunning custom designs that blend traditional techniques with modern aesthetics.</p>
-          <a href="book.html" class="btn-secondary">Book with Brian</a>
-        </div>
-      </article>
-
-      <article class="artist-card">
-        <a href="artist-tempt.html">
-          <img src="assets/images/Artist-Tempt/Tempt_Hummingbird_before-and-after.jpg" alt="Tempt, tattoo artist specializing in geometric and traditional work at Rockstar Tattoo" width="400" height="500" loading="lazy">
-        </a>
-        <div class="artist-card-body">
-          <a href="artist-tempt.html"><h2>Tempt</h2></a>
-          <span class="artist-specialty">Geometric & Traditional</span>
-          <span class="artist-experience">Expert Experience</span>
-          <p class="artist-bio">Tempt specializes in precision geometric work and traditional designs. With an eye for mathematical beauty and clean lines, Tempt creates stunning pieces that stand the test of time. Each tattoo is a masterpiece of technique and creativity.</p>
-          <a href="book.html" class="btn-secondary">Book with Tempt</a>
-        </div>
-      </article>
-
-      <article class="artist-card">
-        <a href="artist-martin.html">
-          <img src="assets/images/Artist-Martin/Martin_Skeleton.JPEG" alt="Skeleton tattoo by Martin Doherty at Rockstar Tattoo" width="400" height="500" loading="lazy">
-        </a>
-        <div class="artist-card-body">
-          <a href="artist-martin.html"><h2>Martin</h2></a>
-          <span class="artist-specialty">Cultural & Custom Design</span>
-          <span class="artist-experience">22 Years Experience</span>
-          <p class="artist-bio">Martin Doherty has been tattooing for 22 years, building a career that spans from the Las Vegas Strip to intimate boutique studios. Drawing deeply from indigenous and cultural traditions, Martin blends bold, precise design with personal storytelling. His work is a reflection of his commitment to craft, ensuring every client feels confident in their choice, every step of the way.</p>
-          <a href="book.html" class="btn-secondary">Book with Martin</a>
-        </div>
-      </article>
-
-      <article class="artist-card">
-        <img src="assets/images/Artist-Brian/Brian_Dragon_Star.jpg" alt="Additional artist portfolio at Rockstar Tattoo" width="400" height="500" loading="lazy">
-        <div class="artist-card-body">
-          <h2>Rockstar Collective</h2>
-          <span class="artist-specialty">All Styles</span>
-          <span class="artist-experience">Professional Artists</span>
-          <p class="artist-bio">Our talented team of professional tattoo artists are passionate about bringing your vision to life. Whether you're looking for bold traditional work, intricate realism, or geometric designs, our artists have the expertise and creativity to deliver exceptional results.</p>
-          <img src="assets/images/Artist-Martin/Martin_Skeleton.JPEG" alt="Skeleton tattoo artwork by Martin Doherty" width="400" height="500" loading="lazy">
-          <a href="book.html" class="btn-secondary">Book Your Session</a>
-        </div>
-      </article>
-
+  <main class="gallery-page">
+    <div class="artist-gallery-header">
+      <h1>Martin's Portfolio</h1>
+      <p class="artist-gallery-subtitle">22 years of cultural and custom design expertise</p>
+      <a href="artists.html" class="btn-secondary">Back to Artists</a>
     </div>
+
+    <!-- Photo Grid (populated by artist-martin.js) -->
+    <div class="gallery-grid" id="gallery-grid" aria-label="Martin's tattoo portfolio"></div>
   </main>
 
   <!-- Footer -->
@@ -169,5 +123,7 @@
   <script src="js/promos.js"></script>
   <script src="js/nav.js"></script>
   <script src="js/countdown.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script src="js/artist-martin.js"></script>
 </body>
 </html>
