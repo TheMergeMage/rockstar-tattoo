@@ -3,12 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Promotions | Rockstar Tattoo — Exquisite Ink &amp; Body Art</title>
-  <meta name="description" content="Current promotions and special offers at Rockstar Tattoo in Las Vegas. Check back often for flash sales, discounts, and limited-time deals.">
-  <meta property="og:title" content="Promotions | Rockstar Tattoo">
-  <meta property="og:description" content="Current promotions and special offers at Rockstar Tattoo Las Vegas.">
+  <title>Tempt's Gallery | Rockstar Tattoo — Geometric & Traditional Specialist</title>
+  <meta name="description" content="Browse Tempt's tattoo portfolio — geometric and traditional designs at Rockstar Tattoo in Las Vegas.">
+  <meta property="og:title" content="Tempt's Gallery | Rockstar Tattoo">
+  <meta property="og:description" content="Browse Tempt's tattoo portfolio — geometric and traditional work.">
   <meta property="og:image" content="assets/images/rockstar-logo.jpg">
   <meta property="og:type" content="website">
+
+  <!-- GLightbox CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
 
   <!-- Site CSS -->
   <link rel="stylesheet" href="css/variables.css?v=logo-jpg-1">
@@ -17,7 +20,7 @@
   <link rel="stylesheet" href="css/header.css?v=logo-jpg-1">
   <link rel="stylesheet" href="css/nav.css">
   <link rel="stylesheet" href="css/footer.css?v=logo-jpg-1">
-  <link rel="stylesheet" href="css/promotions.css">
+  <link rel="stylesheet" href="css/gallery.css">
 </head>
 <body>
 
@@ -42,7 +45,7 @@
           <a href="aftercare.html?type=piercing">Piercing Aftercare</a>
         </div>
       </div>
-      <a href="promotions.html" class="active">Promotions</a>
+      <a href="promotions.html">Promotions</a>
       <a href="contact.html">Contact</a>
     </nav>
     <div class="header-actions">
@@ -76,14 +79,15 @@
   </div>
 
   <!-- Main Content -->
-  <main class="promotions-page">
-    <h1>Promotions</h1>
-    <p class="page-subtitle">Special offers and limited-time deals — check back often.</p>
-
-    <!-- Promo State Container (rendered by countdown.js) -->
-    <div id="promo-tile-container" aria-live="polite" aria-atomic="false">
-      <!-- Rendered by countdown.js -->
+  <main class="gallery-page">
+    <div class="artist-gallery-header">
+      <h1>Tempt's Portfolio</h1>
+      <p class="artist-gallery-subtitle">Master of geometric and traditional design</p>
+      <a href="artists.html" class="btn-secondary">Back to Artists</a>
     </div>
+
+    <!-- Photo Grid (populated by artist-tempt.js) -->
+    <div class="gallery-grid" id="gallery-grid" aria-label="Tempt's tattoo portfolio"></div>
   </main>
 
   <!-- Footer -->
@@ -119,5 +123,7 @@
   <script src="js/promos.js"></script>
   <script src="js/nav.js"></script>
   <script src="js/countdown.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script src="js/artist-tempt.js"></script>
 </body>
 </html>

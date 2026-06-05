@@ -10,6 +10,8 @@ var galleryImages = [
   { src: 'assets/images/homepage-gallery/Tempt_Koi.jpg', alt: 'Traditional Japanese koi fish tattoo', style: 'traditional' },
   { src: 'assets/images/homepage-gallery/Tempt_Snake_Sleeve.jpg', alt: 'Black and grey snake sleeve tattoo', style: 'black-grey' },
   { src: 'assets/images/homepage-gallery/Tempt+3_pic_sleeve.jpg', alt: 'Multi-image sleeve tattoo collection', style: 'geometric' },
+  { src: 'assets/images/Artist-Martin/Martin_Skeleton.JPEG', alt: 'Black and grey skeleton tattoo by Martin', style: 'black-grey' },
+  { src: 'assets/images/Artist-Martin/Martin_Mini_Skull_Lady.JPEG', alt: 'Mini skull lady tattoo by Martin', style: 'black-grey' },
 ];
 
 function filterImages(images, style) {
