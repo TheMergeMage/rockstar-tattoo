@@ -21,7 +21,7 @@
 
   /* Layout */
   --max-width:    1200px;
-  --header-height: 72px;
+  --header-height: 126px;
 
   /* Transitions */
   --transition-fast: 150ms ease;
@@ -46,8 +46,8 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1280px) {
   :root {
-    --header-height: 84px;
+    --header-height: 147px;
   }
 }
