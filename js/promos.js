@@ -2,12 +2,12 @@
    Edit this file only to update promo content site-wide. */
 
 var promo = {
-  isActive: false,
-  title: "Summer Flash Sale",
-  description: "Get 20% off any tattoo booking made in June!",
-  ctaText: "Book Now",
-  ctaLink: "book.html",
-  endDate: "2026-06-30T23:59:59",
+  isActive: true,
+  title: "Free Piercings with $50 Jewelry Purchase",
+  description: "",
+  ctaText: "",
+  ctaLink: "",
+  endDate: null,
   startDate: null,
   image: null,
 };

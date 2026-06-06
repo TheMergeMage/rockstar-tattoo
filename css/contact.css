@@ -20,39 +20,19 @@
 .contact-layout {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-lg);
+  gap: var(--space-md);
 }
 
 @media (min-width: 768px) {
   .contact-layout {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     align-items: start;
   }
 }
 
-/* ── Wix Form Embed ── */
-.wix-form-embed {
-  min-height: 400px;
-  background-color: #141414;
-  border: 1px dashed rgba(192, 192, 192, 0.3);
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--space-md);
-  color: var(--color-silver);
-  font-family: var(--font-heading);
-  font-size: 0.9rem;
-  letter-spacing: 0.05em;
-  text-align: center;
-  text-transform: uppercase;
-}
-
 /* ── Info Block ── */
 .contact-info-block {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
+  display: contents;
 }
 
 .contact-detail {
@@ -76,24 +56,4 @@
 
 .contact-detail a:hover {
   color: var(--color-white);
-}
-
-/* ── Map Iframe ── */
-.map-container {
-  border-radius: 4px;
-  overflow: hidden;
-  border: 1px solid rgba(192, 192, 192, 0.12);
-}
-
-.map-container iframe {
-  display: block;
-  width: 100%;
-  height: 300px;
-  border: none;
-}
-
-@media (min-width: 768px) {
-  .map-container iframe {
-    height: 400px;
-  }
 }

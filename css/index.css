@@ -52,14 +52,14 @@
 
 /* ── Carousel Section ── */
 .carousel-section {
-  height: 50vh;
-  min-height: 280px;
+  height: 75vh;
+  min-height: 420px;
   overflow: hidden;
 }
 
 @media (min-width: 1024px) {
   .carousel-section {
-    height: 60vh;
+    height: 90vh;
   }
 }
 
@@ -67,10 +67,44 @@
   height: 100%;
 }
 
+.carousel-section .swiper-slide {
+  height: 100%;
+}
+
+.carousel-slide-grid {
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: var(--space-xs);
+  padding: var(--space-xs);
+  background-color: #050505;
+}
+
+.carousel-slide-cell {
+  flex: 0 1 calc((100% - var(--space-xs)) / 2);
+  height: calc((100% - var(--space-xs)) / 2);
+  min-width: 0;
+  display: grid;
+  place-items: center;
+  background-color: #111;
+  border: 1px solid rgba(192, 192, 192, 0.1);
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .carousel-slide-cell {
+    flex-basis: calc((100% - 1.5rem) / 4);
+    height: 100%;
+  }
+}
+
 .carousel-section .swiper-slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  display: block;
 }
 
 .swiper-button-next,
@@ -241,16 +275,19 @@
   border: 1px solid var(--color-red);
   border-radius: 4px;
   padding: var(--space-md);
+  display: grid;
+  place-items: center;
+  gap: var(--space-sm);
   text-align: center;
 }
 
 .promo-tile h3 {
   color: var(--color-red);
-  margin-bottom: var(--space-sm);
+  margin: 0;
 }
 
 .promo-tile p {
-  margin-bottom: var(--space-sm);
+  margin: 0;
 }
 
 .promo-empty-msg {
@@ -309,7 +346,8 @@
 
 @media (min-width: 768px) {
   .testimonials-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 850px;
   }
 }
 

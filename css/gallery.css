@@ -19,6 +19,11 @@
   margin-bottom: var(--space-md);
 }
 
+.filter-bar[hidden],
+.filter-bar.is-hidden {
+  display: none;
+}
+
 .filter-btn {
   font-family: var(--font-heading);
   font-size: 0.8rem;

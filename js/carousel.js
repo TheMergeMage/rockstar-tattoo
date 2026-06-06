@@ -1,45 +1,42 @@
-/* carousel.js — Swiper.js initialization for homepage image carousel */
-
-var carouselSlides = [
-  {
-    src: 'https://placehold.co/1200x700/1a1a1a/666666?text=Tattoo+Artwork+1',
-    alt: 'Tattoo artwork showcase 1 of 4',
-  },
-  {
-    src: 'https://placehold.co/1200x700/1a1a1a/666666?text=Tattoo+Artwork+2',
-    alt: 'Tattoo artwork showcase 2 of 4',
-  },
-  {
-    src: 'https://placehold.co/1200x700/1a1a1a/666666?text=Tattoo+Artwork+3',
-    alt: 'Tattoo artwork showcase 3 of 4',
-  },
-  {
-    src: 'https://placehold.co/1200x700/1a1a1a/666666?text=Tattoo+Artwork+4',
-    alt: 'Tattoo artwork showcase 4 of 4',
-  },
-];
+/* carousel.js - Swiper.js initialization for homepage gallery carousel */
 
 (function () {
   document.addEventListener('DOMContentLoaded', function () {
     var wrapper = document.querySelector('.swiper-wrapper');
-    if (!wrapper) return;
+    if (!wrapper || typeof galleryImages === 'undefined') return;
 
-    /* Build slides */
-    carouselSlides.forEach(function (slide, i) {
+    function createImageCell(item, imageIndex) {
+      var cell = document.createElement('div');
+      cell.className = 'carousel-slide-cell';
+
+      var img = document.createElement('img');
+      img.src = item.src;
+      img.alt = item.alt;
+      img.loading = imageIndex === 0 ? 'eager' : 'lazy';
+
+      cell.appendChild(img);
+      return cell;
+    }
+
+    for (var start = 0; start < galleryImages.length; start += 4) {
+      var group = galleryImages.slice(start, start + 4);
       var div = document.createElement('div');
       div.className = 'swiper-slide';
-      var img = document.createElement('img');
-      img.src = slide.src;
-      img.alt = slide.alt;
-      img.loading = i === 0 ? 'eager' : 'lazy';
-      div.appendChild(img);
-      wrapper.appendChild(div);
-    });
 
-    /* Respect prefers-reduced-motion */
+      var grid = document.createElement('div');
+      grid.className = 'carousel-slide-grid';
+      grid.dataset.count = String(group.length);
+
+      group.forEach(function (item, index) {
+        grid.appendChild(createImageCell(item, start + index));
+      });
+
+      div.appendChild(grid);
+      wrapper.appendChild(div);
+    }
+
     var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    /* Init Swiper */
     if (typeof Swiper !== 'undefined') {
       new Swiper('.swiper', {
         loop: true,

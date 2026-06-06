@@ -75,7 +75,7 @@
 
 /* Social icons */
 .footer-socials {
-  display: flex;
+  display: none;
   gap: var(--space-sm);
   align-items: center;
   margin-top: var(--space-xs);
