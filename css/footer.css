@@ -57,7 +57,10 @@
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
+  align-items: center;
   justify-content: center;
+  max-width: 19rem;
+  text-align: center;
 }
 
 .footer-info p,
@@ -72,23 +75,23 @@
 
 @media (min-width: 390px) {
   .footer-inner {
-    grid-template-columns: auto minmax(0, 13.25rem);
+    grid-template-columns: minmax(6.75rem, auto) minmax(0, 15rem);
     grid-template-areas:
       "logo info"
       "nav nav";
     justify-content: center;
     align-items: center;
-    column-gap: var(--space-sm);
+    column-gap: clamp(0.75rem, 3vw, var(--space-md));
     row-gap: var(--space-md);
-    text-align: left;
+    text-align: center;
   }
 
   .footer-inner > a {
-    justify-self: end;
+    justify-self: center;
   }
 
   .footer-info {
-    justify-self: start;
+    justify-self: center;
   }
 
   .footer-nav {
@@ -99,8 +102,8 @@
 
 @media (min-width: 768px) {
   .footer-inner {
-    grid-template-columns: auto minmax(0, 18rem);
-    column-gap: var(--space-lg);
+    grid-template-columns: minmax(7.5rem, auto) minmax(0, 19rem);
+    column-gap: var(--space-md);
   }
 
   .footer-logo {
@@ -114,31 +117,36 @@
 
 /* Social icons */
 .footer-socials {
-  display: none;
+  display: flex;
+  justify-content: center;
   gap: var(--space-sm);
   align-items: center;
-  margin-top: var(--space-xs);
+  margin-top: 0.35rem;
 }
 
 .footer-socials a {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(192, 192, 192, 0.3);
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.03);
   color: var(--color-silver);
-  transition: color var(--transition-fast), transform var(--transition-fast);
+  transition: color var(--transition-fast), border-color var(--transition-fast), background-color var(--transition-fast), transform var(--transition-fast);
 }
 
 .footer-socials a:hover {
   color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.55);
+  background-color: rgba(255, 255, 255, 0.08);
   transform: translateY(-2px);
 }
 
 .footer-socials svg {
-  width: 20px;
-  height: 20px;
-  fill: currentColor;
+  width: 22px;
+  height: 22px;
 }
 
 .footer-copyright {
