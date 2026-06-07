@@ -11,6 +11,7 @@
   grid-template-columns: 1fr;
   grid-template-areas:
     "info"
+    "socials"
     "nav"
     "logo";
   justify-items: center;
@@ -57,10 +58,10 @@
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   max-width: 19rem;
-  text-align: center;
+  text-align: left;
 }
 
 .footer-info p,
@@ -78,7 +79,8 @@
     grid-template-columns: minmax(6.75rem, auto) minmax(0, 15rem);
     grid-template-areas:
       "logo info"
-      "nav nav";
+      "nav nav"
+      "socials socials";
     justify-content: center;
     align-items: center;
     column-gap: clamp(0.75rem, 3vw, var(--space-md));
@@ -98,6 +100,10 @@
     justify-self: center;
     text-align: center;
   }
+
+  .footer-socials {
+    justify-self: center;
+  }
 }
 
 @media (min-width: 768px) {
@@ -115,13 +121,31 @@
   }
 }
 
+@media (min-width: 1024px) {
+  .footer-inner {
+    grid-template-columns: auto minmax(16rem, 20rem) minmax(0, 1fr) auto;
+    grid-template-areas: "logo info nav socials";
+    column-gap: var(--space-lg);
+    row-gap: 0;
+  }
+
+  .footer-nav {
+    justify-self: center;
+  }
+
+  .footer-socials {
+    justify-self: end;
+  }
+}
+
 /* Social icons */
 .footer-socials {
+  grid-area: socials;
   display: flex;
   justify-content: center;
   gap: var(--space-sm);
   align-items: center;
-  margin-top: 0.35rem;
+  margin-top: 0;
 }
 
 .footer-socials a {
