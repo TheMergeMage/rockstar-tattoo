@@ -63,14 +63,13 @@
 
 /* ── Carousel Section ── */
 .carousel-section {
-  height: 60vh;
-  min-height: 336px;
+  height: clamp(336px, 60vh, 700px);
   overflow: hidden;
 }
 
 @media (min-width: 1024px) {
   .carousel-section {
-    height: 72vh;
+    height: clamp(336px, 72vh, 700px);
   }
 }
 
@@ -192,7 +191,7 @@ a.carousel-slide-cell {
   max-width: var(--max-width);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--space-sm);
 }
 
@@ -210,6 +209,10 @@ a.carousel-slide-cell {
   text-align: center;
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  overflow-wrap: anywhere;
   transition: border-color var(--transition-fast), transform var(--transition-fast);
 }
 
@@ -229,13 +232,91 @@ a.carousel-slide-cell {
   margin-bottom: var(--space-sm);
 }
 
+.service-tile h3,
+.service-tile p,
+.service-tile .btn-secondary {
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  hyphens: auto;
+}
+
 .service-tile .btn-secondary {
   margin-top: auto;
+  align-self: center;
+  line-height: 1.15;
+  text-align: center;
+  white-space: normal;
 }
 
 .service-icon {
   font-size: 2rem;
   display: block;
+}
+
+@media (max-width: 767px) {
+  .services-section {
+    padding: var(--space-md) 0.75rem;
+  }
+
+  .services-section h2 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .services-grid {
+    gap: 0.625rem;
+  }
+
+  .service-tile {
+    padding: 1rem 0.625rem;
+  }
+
+  .service-tile h3 {
+    margin: 0.75rem 0 0.375rem;
+  }
+
+  .service-tile p {
+    margin-bottom: 0.75rem;
+  }
+
+  .service-tile .btn-secondary {
+    padding: 0.65rem 0.75rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .services-section {
+    padding-inline: 0.5rem;
+  }
+
+  .services-grid {
+    gap: 0.5rem;
+  }
+
+  .service-tile {
+    padding: 0.85rem 0.5rem;
+  }
+
+  .service-icon {
+    font-size: 1.7rem;
+  }
+
+  .service-tile h3 {
+    font-size: 0.875rem;
+  }
+
+  .service-tile p {
+    font-size: 0.78rem;
+    line-height: 1.45;
+  }
+
+  .service-tile .btn-secondary {
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    padding: 0.55rem 0.45rem;
+  }
 }
 
 /* ── Gallery Preview ── */
