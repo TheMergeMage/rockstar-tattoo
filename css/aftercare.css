@@ -10,13 +10,6 @@
   margin-bottom: var(--space-sm);
 }
 
-.aftercare-intro {
-  max-width: 58ch;
-  margin: 0 auto var(--space-lg);
-  text-align: center;
-  color: var(--color-silver);
-}
-
 .aftercare-switcher {
   display: flex;
   flex-wrap: wrap;
