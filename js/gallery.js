@@ -41,6 +41,10 @@
   }
 
   function filterSections(grid, artist) {
+    grid.classList.toggle('is-filter-all', artist === 'all');
+    grid.classList.toggle('is-filter-artist', artist !== 'all');
+    grid.dataset.activeArtist = artist;
+
     grid.querySelectorAll('.gallery-section').forEach(function (section) {
       section.hidden = artist !== 'all' && section.dataset.artist !== artist;
     });
@@ -50,11 +54,12 @@
     var grid = document.getElementById('gallery-grid');
     if (!grid || typeof galleryImages === 'undefined') return;
 
-    grid.classList.add('gallery-section-list');
+    grid.classList.add('gallery-section-list', 'is-filter-all');
+    grid.dataset.activeArtist = 'all';
     grid.innerHTML = '';
 
     var showcaseClass = 'gallery-lightbox-showcase';
-    grid.appendChild(buildGallerySection('Showcase', getShowcaseImages(), {
+    grid.appendChild(buildGallerySection('Artist Showcase', getShowcaseImages(), {
       section: 'showcase',
       lightboxClass: showcaseClass,
       galleryName: 'gallery-showcase',

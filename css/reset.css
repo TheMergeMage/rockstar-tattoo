@@ -6,12 +6,14 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   min-height: 100vh;
   line-height: var(--line-height-base);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 img, picture, video, canvas, svg {

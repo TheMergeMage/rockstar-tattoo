@@ -9,38 +9,34 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-md);
+  grid-template-areas:
+    "info"
+    "nav"
+    "logo";
+  justify-items: center;
+  gap: var(--space-sm);
+  text-align: center;
 }
 
-@media (min-width: 768px) {
-  .footer-inner {
-    grid-template-columns: auto 1fr auto;
-    align-items: start;
-    gap: var(--space-lg);
-  }
+.footer-inner > a {
+  grid-area: logo;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Logo */
 .footer-logo {
-  height: 72px;
+  height: clamp(82px, 16vw, 104px);
   width: auto;
   object-fit: contain;
 }
 
-/* Nav links */
 .footer-nav {
+  grid-area: nav;
   display: flex;
-  flex-direction: column;
-  gap: var(--space-xs);
-}
-
-@media (min-width: 768px) {
-  .footer-nav {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: var(--space-sm) var(--space-md);
-    align-items: flex-start;
-  }
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-xs) var(--space-md);
 }
 
 .footer-nav a {
@@ -56,11 +52,12 @@
   color: var(--color-white);
 }
 
-/* Info block */
 .footer-info {
+  grid-area: info;
   display: flex;
   flex-direction: column;
-  gap: var(--space-xs);
+  gap: 0.35rem;
+  justify-content: center;
 }
 
 .footer-info p,
@@ -71,6 +68,48 @@
 
 .footer-info a:hover {
   color: var(--color-white);
+}
+
+@media (min-width: 390px) {
+  .footer-inner {
+    grid-template-columns: auto minmax(0, 13.25rem);
+    grid-template-areas:
+      "logo info"
+      "nav nav";
+    justify-content: center;
+    align-items: center;
+    column-gap: var(--space-sm);
+    row-gap: var(--space-md);
+    text-align: left;
+  }
+
+  .footer-inner > a {
+    justify-self: end;
+  }
+
+  .footer-info {
+    justify-self: start;
+  }
+
+  .footer-nav {
+    justify-self: center;
+    text-align: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .footer-inner {
+    grid-template-columns: auto minmax(0, 18rem);
+    column-gap: var(--space-lg);
+  }
+
+  .footer-logo {
+    height: 112px;
+  }
+
+  .footer-nav {
+    gap: var(--space-sm) var(--space-md);
+  }
 }
 
 /* Social icons */
@@ -102,7 +141,6 @@
   fill: currentColor;
 }
 
-/* Copyright */
 .footer-copyright {
   max-width: var(--max-width);
   margin: var(--space-md) auto 0;

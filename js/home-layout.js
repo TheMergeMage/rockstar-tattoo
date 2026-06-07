@@ -11,7 +11,7 @@
     var contentHeight = content.getBoundingClientRect().height;
     var originalHeroHeight = window.innerHeight;
     var emptySpace = Math.max(originalHeroHeight - contentHeight, 0);
-    var targetHeight = Math.ceil(contentHeight + emptySpace * 0.2);
+    var targetHeight = Math.ceil(contentHeight + emptySpace * 0.16);
 
     hero.style.minHeight = targetHeight + 'px';
   }
