@@ -26,10 +26,10 @@
 
 .filter-btn {
   font-family: var(--font-heading);
-  font-size: 0.8rem;
+  font-size: 1rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 0.4rem 1rem;
+  padding: 0.5rem 1.25rem;
   border: 1px solid rgba(192, 192, 192, 0.3);
   background-color: transparent;
   color: var(--color-silver);
@@ -68,7 +68,7 @@
 }
 
 .gallery-section {
-  margin-top: var(--space-lg);
+  margin-top: var(--space-md);
 }
 
 .gallery-section:first-child {
@@ -82,6 +82,18 @@
 .gallery-section-title {
   text-align: center;
   margin-bottom: var(--space-md);
+}
+
+.gallery-section-list.is-filter-all .gallery-section[data-section="artist"] .gallery-section-title {
+  text-align: left;
+}
+
+.gallery-section-list.is-filter-artist .gallery-section:not([hidden]) {
+  margin-top: 0;
+}
+
+.gallery-section-list.is-filter-artist .gallery-section-title {
+  text-align: center;
 }
 
 .gallery-section-grid {
