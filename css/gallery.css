@@ -10,13 +10,94 @@
   text-align: center;
 }
 
+.artist-detail-page h1 {
+  text-align: left;
+  margin-bottom: var(--space-sm);
+}
+
+.artist-profile {
+  display: grid;
+  gap: var(--space-md);
+  align-items: stretch;
+  margin-bottom: var(--space-lg);
+  background-color: var(--color-surface-raised);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+.artist-profile-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+}
+
+.artist-profile-copy .action-row {
+  margin-top: var(--space-sm);
+}
+
+.artist-profile img {
+  width: 100%;
+  height: 100%;
+  min-height: 22rem;
+  object-fit: cover;
+  display: block;
+}
+
+.section-heading-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.section-heading-row h2 {
+  margin: 0;
+}
+
+.artist-portfolio-section {
+  margin-bottom: var(--space-lg);
+}
+
+.artist-conversion-panel {
+  display: grid;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+  padding: var(--space-lg);
+  background:
+    linear-gradient(135deg, rgba(204, 0, 0, 0.18), rgba(204, 0, 0, 0)),
+    var(--color-surface-raised);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 4px;
+  text-align: center;
+}
+
+.artist-conversion-panel .action-row {
+  justify-content: center;
+}
+
+@media (min-width: 900px) {
+  .artist-profile {
+    grid-template-columns: minmax(0, 1.05fr) minmax(20rem, 0.95fr);
+  }
+
+  .artist-profile-copy {
+    padding: var(--space-lg);
+  }
+}
+
 /* ── Filter Bar ── */
 .filter-bar {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-xs);
   justify-content: center;
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
 }
 
 .filter-bar[hidden],
@@ -25,6 +106,10 @@
 }
 
 .filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: var(--tap-target);
   font-family: var(--font-heading);
   font-size: 1rem;
   letter-spacing: 0.06em;
@@ -37,6 +122,44 @@
   border-radius: 2px;
   transition: background-color var(--transition-fast), color var(--transition-fast),
               border-color var(--transition-fast);
+}
+
+.filter-count {
+  min-width: 1.35rem;
+  padding: 0.05rem 0.35rem;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--color-silver);
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+
+.filter-btn.active .filter-count,
+.filter-btn[aria-pressed="true"] .filter-count {
+  background-color: rgba(0, 0, 0, 0.22);
+  color: var(--color-white);
+}
+
+.gallery-filter-status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin: var(--space-sm) 0 var(--space-md);
+  text-align: center;
+}
+
+.gallery-filter-status p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+}
+
+.gallery-filter-status .btn-secondary {
+  min-height: 2.35rem;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.76rem;
 }
 
 .filter-btn:hover {
@@ -140,6 +263,8 @@
   overflow: hidden;
   border-radius: 2px;
   position: relative;
+  background-color: var(--color-surface-raised);
+  border: 1px solid var(--color-border-subtle);
 }
 
 .gallery-item img {
@@ -154,6 +279,65 @@
   transform: scale(1.04);
 }
 
+.gallery-item-overlay {
+  position: absolute;
+  inset: auto 0 0;
+  display: grid;
+  gap: 0.2rem;
+  padding: 3.5rem 0.85rem 0.85rem;
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.86));
+  color: var(--color-white);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+  pointer-events: none;
+}
+
+.gallery-item:hover .gallery-item-overlay,
+.gallery-item:focus-visible .gallery-item-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gallery-item-kicker,
+.gallery-item-view {
+  color: var(--color-silver);
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.gallery-item-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.gallery-item-view {
+  color: var(--color-red);
+}
+
+.gallery-empty {
+  max-width: 34rem;
+  margin: var(--space-lg) auto 0;
+  padding: var(--space-lg) var(--space-md);
+  text-align: center;
+  background-color: var(--color-surface-raised);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 4px;
+}
+
+.gallery-empty h2 {
+  margin-bottom: var(--space-xs);
+  font-size: clamp(1.45rem, 3vw, 2rem);
+}
+
+.gallery-empty p {
+  margin-bottom: var(--space-md);
+}
+
 .gallery-item.hidden {
   display: none;
 }
@@ -164,7 +348,21 @@
 }
 
 .glightbox-container .gslide-description {
-  display: none !important;
+  display: block !important;
+  background: rgba(10, 10, 10, 0.96) !important;
+  color: var(--color-white) !important;
+  border: 1px solid var(--color-border-subtle);
+}
+
+.glightbox-container .gslide-title {
+  color: var(--color-white) !important;
+  font-family: var(--font-heading);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.glightbox-container .gslide-desc {
+  color: var(--color-silver) !important;
 }
 
 .glightbox-container .gslide-media,
@@ -182,6 +380,37 @@
 
 .glightbox-button svg path {
   fill: var(--color-white);
+}
+
+.lightbox-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-silver);
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.lightbox-meta span {
+  padding: 0.2rem 0.55rem;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 2px;
+}
+
+.lightbox-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.lightbox-actions .btn-primary,
+.lightbox-actions .btn-secondary {
+  min-height: 2.25rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.72rem;
 }
 
 .homepage-lightbox-cta {

@@ -1,6 +1,6 @@
 /* ── Contact Page ── */
 .contact-page {
-  padding: var(--space-lg) var(--space-md);
+  padding: var(--section-pad-y) var(--section-pad-x);
   max-width: var(--max-width);
   margin: 0 auto;
 }
@@ -36,10 +36,11 @@
 }
 
 .contact-detail {
-  background-color: #141414;
-  border: 1px solid rgba(192, 192, 192, 0.12);
+  background-color: var(--color-surface-raised);
+  border: 1px solid var(--color-border-subtle);
   border-radius: 4px;
   padding: var(--space-md);
+  box-shadow: var(--shadow-soft);
 }
 
 .contact-detail h2 {
@@ -56,4 +57,135 @@
 
 .contact-detail a:hover {
   color: var(--color-white);
+}
+
+.contact-action-panel {
+  display: grid;
+  gap: var(--space-md);
+  align-items: center;
+  margin-top: var(--space-lg);
+  padding: var(--space-lg);
+  background:
+    linear-gradient(135deg, rgba(204, 0, 0, 0.18), rgba(204, 0, 0, 0)),
+    var(--color-surface-raised);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 4px;
+  box-shadow: var(--shadow-soft);
+}
+
+.contact-action-panel h2 {
+  margin: 0 0 var(--space-xs);
+}
+
+.contact-action-panel p {
+  margin: 0;
+}
+
+.contact-action-grid {
+  display: grid;
+  gap: var(--space-xs);
+}
+
+.contact-map-panel {
+  display: grid;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+.map-card,
+.consult-prep {
+  min-height: 18rem;
+  padding: var(--space-md);
+  background-color: var(--color-surface-raised);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 4px;
+  box-shadow: var(--shadow-soft);
+}
+
+.map-card {
+  position: relative;
+  display: grid;
+  align-content: end;
+  overflow: hidden;
+  color: var(--color-white);
+  text-decoration: none;
+  background:
+    linear-gradient(135deg, rgba(204, 0, 0, 0.32), rgba(0, 0, 0, 0.18)),
+    linear-gradient(45deg, transparent 0 46%, rgba(255, 255, 255, 0.08) 46% 48%, transparent 48%),
+    radial-gradient(circle at 35% 40%, rgba(255, 255, 255, 0.1), transparent 18%),
+    var(--color-surface-inset);
+}
+
+.map-card::before,
+.map-card::after {
+  content: '';
+  position: absolute;
+  background: rgba(245, 245, 245, 0.08);
+}
+
+.map-card::before {
+  width: 120%;
+  height: 1px;
+  left: -10%;
+  top: 38%;
+  transform: rotate(-18deg);
+}
+
+.map-card::after {
+  width: 1px;
+  height: 120%;
+  left: 62%;
+  top: -10%;
+  transform: rotate(23deg);
+}
+
+.map-pin {
+  position: absolute;
+  top: 38%;
+  left: 48%;
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: var(--color-red);
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  box-shadow: 0 0 0 0.55rem rgba(204, 0, 0, 0.16);
+}
+
+.map-card-title,
+.map-card-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.map-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.map-card-copy {
+  color: var(--color-silver);
+}
+
+.consult-prep h2 {
+  margin: var(--space-xs) 0 var(--space-sm);
+}
+
+.consult-prep ul {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0;
+  padding-left: 1.15rem;
+  color: var(--color-silver);
+}
+
+@media (min-width: 768px) {
+  .contact-action-panel {
+    grid-template-columns: minmax(0, 1.1fr) minmax(16rem, 0.55fr);
+  }
+
+  .contact-map-panel {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
 }

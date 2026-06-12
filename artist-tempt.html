@@ -83,15 +83,44 @@
 
 
   <!-- Main Content -->
-  <main class="gallery-page">
-    <div class="artist-gallery-header">
-      <h1>Tempt's Portfolio</h1>
-      <p class="artist-gallery-subtitle">Master of geometric and traditional design</p>
-      <a href="artists.html" class="btn-secondary">Back to Artists</a>
-    </div>
+  <main class="gallery-page artist-detail-page">
+    <section class="artist-profile">
+      <div class="artist-profile-copy">
+        <span class="eyebrow">Artist Profile</span>
+        <h1>Tempt's Portfolio</h1>
+        <p class="artist-gallery-subtitle">Precision geometric work, traditional motifs, and clean-lined custom tattoos.</p>
+        <ul class="tag-list" aria-label="Tempt specialties">
+          <li class="tag-pill">Geometric</li>
+          <li class="tag-pill">Traditional</li>
+          <li class="tag-pill">Black & Grey</li>
+        </ul>
+        <div class="action-row">
+          <a href="tel:7027499914" class="btn-primary">Call About Tempt's Work</a>
+          <a href="gallery.html?artist=tempt" class="btn-secondary">Filter Tempt's Gallery</a>
+        </div>
+      </div>
+      <img src="assets/images/Artist-Tempt/Tempt_Hummingbird_before-and-after.jpg" alt="Hummingbird tattoo by Tempt at Rockstar Tattoo" width="1142" height="1155" loading="eager">
+    </section>
 
-    <!-- Photo Grid (populated by artist-tempt.js) -->
-    <div class="gallery-grid" id="gallery-grid" aria-label="Tempt's tattoo portfolio"></div>
+    <section class="artist-portfolio-section" aria-label="Tempt portfolio gallery">
+      <div class="section-heading-row">
+        <div>
+          <span class="eyebrow">Selected Work</span>
+          <h2>Portfolio</h2>
+        </div>
+        <a href="artists.html" class="btn-secondary">Back to Artists</a>
+      </div>
+      <div class="gallery-grid" id="gallery-grid" aria-label="Tempt's tattoo portfolio"></div>
+    </section>
+
+    <section class="artist-conversion-panel" aria-label="Tempt consultation actions">
+      <h2>Ask About Similar Linework</h2>
+      <p>Call the shop to talk through reference ideas, geometry, placement, and sizing for clean custom work.</p>
+      <div class="action-row">
+        <a href="tel:7027499914" class="btn-primary">Call (702) 749-9914</a>
+        <a href="contact.html" class="btn-secondary">Contact The Shop</a>
+      </div>
+    </section>
   </main>
   <!-- Footer -->
   <footer class="site-footer">
@@ -131,5 +160,6 @@
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
   <script src="js/gallery-data.js?v=cleanup-1"></script>
   <script src="js/artist-tempt.js?v=cleanup-1"></script>
+  <script src="js/reveal.js?v=modern-ui-1"></script>
 </body>
 </html>

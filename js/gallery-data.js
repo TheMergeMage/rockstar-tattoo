@@ -8,6 +8,22 @@ var artistDisplayNames = {
   tempt: 'Tempt',
 };
 
+var artistProfileUrls = {
+  brian: 'artist-brian.html',
+  martin: 'artist-martin.html',
+  tempt: 'artist-tempt.html',
+};
+
+var styleDisplayNames = {
+  all: 'All',
+  traditional: 'Traditional',
+  realism: 'Realism',
+  geometric: 'Geometric',
+  'black-grey': 'Black & Grey',
+  color: 'Color',
+  piercings: 'Piercings',
+};
+
 var galleryImages = [
   { src: 'assets/images/Artist-Tempt/Tempt_Daisy_Anchor.jpg', alt: 'Daisy anchor tattoo by Tempt', artist: 'tempt', artistName: 'Tempt', style: 'traditional', showcase: true },
   { src: 'assets/images/Artist-Tempt/Tempt_Hummingbird_before-and-after.jpg', alt: 'Hummingbird tattoo by Tempt', artist: 'tempt', artistName: 'Tempt', style: 'realism' },
@@ -33,6 +49,35 @@ var galleryImages = [
 
 function hasGalleryTag(img, tag) {
   return Array.isArray(img.tags) && img.tags.indexOf(tag) !== -1;
+}
+
+function getStyleDisplayName(style) {
+  return styleDisplayNames[style] || style;
+}
+
+function getGalleryImageTitle(img) {
+  return img.alt || (img.artistName + ' tattoo work');
+}
+
+function getGalleryImageDescription(img) {
+  var artistName = img.artistName || artistDisplayNames[img.artist] || 'Rockstar Tattoo';
+  var styleName = getStyleDisplayName(img.style);
+  var artistUrl = artistProfileUrls[img.artist] || 'artists.html';
+
+  return [
+    '<div class="lightbox-meta">',
+    '<span>' + artistName + '</span>',
+    '<span>' + styleName + '</span>',
+    '</div>',
+    '<div class="lightbox-actions">',
+    '<a href="' + artistUrl + '" class="btn-secondary">View Artist</a>',
+    '<a href="tel:7027499914" class="btn-primary">Call About This Style</a>',
+    '</div>',
+  ].join('');
+}
+
+function getGalleryThumbnailSrc(src) {
+  return src.replace('assets/images/', 'assets/images/gallery-thumbs/');
 }
 
 function shuffleGalleryImages(images) {
@@ -69,6 +114,21 @@ function getShowcaseImages() {
   }).filter(Boolean);
 }
 
+function getGalleryFilterCounts(images) {
+  var source = images || galleryImages;
+  var counts = {
+    artists: { all: source.length },
+    styles: { all: source.length },
+  };
+
+  source.forEach(function (img) {
+    counts.artists[img.artist] = (counts.artists[img.artist] || 0) + 1;
+    counts.styles[img.style] = (counts.styles[img.style] || 0) + 1;
+  });
+
+  return counts;
+}
+
 function createGalleryLink(img, options) {
   var settings = options || {};
   var a = document.createElement('a');
@@ -85,12 +145,27 @@ function createGalleryLink(img, options) {
     a.dataset.imageIndex = String(settings.imageIndex);
   }
 
+  a.dataset.title = getGalleryImageTitle(img);
+  a.dataset.description = getGalleryImageDescription(img);
+
   var image = document.createElement('img');
-  image.src = img.src;
+  image.src = settings.thumbnail || getGalleryThumbnailSrc(img.src);
   image.alt = img.alt;
   image.loading = settings.loading || 'lazy';
+  image.decoding = 'async';
 
   a.appendChild(image);
+
+  if (settings.showMeta) {
+    var overlay = document.createElement('span');
+    overlay.className = 'gallery-item-overlay';
+    overlay.innerHTML =
+      '<span class="gallery-item-kicker">' + (img.artistName || artistDisplayNames[img.artist]) + '</span>' +
+      '<span class="gallery-item-title">' + getStyleDisplayName(img.style) + '</span>' +
+      '<span class="gallery-item-view">View</span>';
+    a.appendChild(overlay);
+  }
+
   return a;
 }
 
@@ -117,6 +192,7 @@ function renderArtistGallery(artist, galleryName) {
       grid.appendChild(createGalleryLink(img, {
         className: 'gallery-item glightbox ' + lightboxClass,
         galleryName: galleryName,
+        showMeta: true,
       }));
     });
 

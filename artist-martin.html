@@ -83,15 +83,44 @@
 
 
   <!-- Main Content -->
-  <main class="gallery-page">
-    <div class="artist-gallery-header">
-      <h1>Martin's Portfolio</h1>
-      <p class="artist-gallery-subtitle">22 years of cultural and custom design expertise</p>
-      <a href="artists.html" class="btn-secondary">Back to Artists</a>
-    </div>
+  <main class="gallery-page artist-detail-page">
+    <section class="artist-profile">
+      <div class="artist-profile-copy">
+        <span class="eyebrow">Artist Profile</span>
+        <h1>Martin's Portfolio</h1>
+        <p class="artist-gallery-subtitle">Cultural and custom design work shaped by 22 years of tattooing experience.</p>
+        <ul class="tag-list" aria-label="Martin specialties">
+          <li class="tag-pill">Cultural Design</li>
+          <li class="tag-pill">Black & Grey</li>
+          <li class="tag-pill">Custom Work</li>
+        </ul>
+        <div class="action-row">
+          <a href="tel:7027499914" class="btn-primary">Call About Martin's Work</a>
+          <a href="gallery.html?artist=martin" class="btn-secondary">Filter Martin's Gallery</a>
+        </div>
+      </div>
+      <img src="assets/images/Artist-Martin/Martin_Skeleton.JPEG" alt="Skeleton tattoo by Martin at Rockstar Tattoo" width="1800" height="1800" loading="eager">
+    </section>
 
-    <!-- Photo Grid (populated by artist-martin.js) -->
-    <div class="gallery-grid" id="gallery-grid" aria-label="Martin's tattoo portfolio"></div>
+    <section class="artist-portfolio-section" aria-label="Martin portfolio gallery">
+      <div class="section-heading-row">
+        <div>
+          <span class="eyebrow">Selected Work</span>
+          <h2>Portfolio</h2>
+        </div>
+        <a href="artists.html" class="btn-secondary">Back to Artists</a>
+      </div>
+      <div class="gallery-grid" id="gallery-grid" aria-label="Martin's tattoo portfolio"></div>
+    </section>
+
+    <section class="artist-conversion-panel" aria-label="Martin consultation actions">
+      <h2>Ask About Cultural Or Custom Work</h2>
+      <p>Call the shop to talk through design direction, placement, and whether Martin is the right fit for your piece.</p>
+      <div class="action-row">
+        <a href="tel:7027499914" class="btn-primary">Call (702) 749-9914</a>
+        <a href="contact.html" class="btn-secondary">Contact The Shop</a>
+      </div>
+    </section>
   </main>
   <!-- Footer -->
   <footer class="site-footer">
@@ -131,5 +160,6 @@
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
   <script src="js/gallery-data.js?v=cleanup-1"></script>
   <script src="js/artist-martin.js?v=cleanup-1"></script>
+  <script src="js/reveal.js?v=modern-ui-1"></script>
 </body>
 </html>

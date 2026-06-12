@@ -94,14 +94,18 @@
       <button class="filter-btn artist-filter-btn" data-artist="tempt" aria-pressed="false">Tempt</button>
     </div>
 
-    <div class="filter-bar style-filter-bar is-hidden" role="group" aria-label="Filter by style" hidden>
+    <div class="filter-bar style-filter-bar" role="group" aria-label="Filter by style">
       <button class="filter-btn style-filter-btn active" data-filter="all" aria-pressed="true">All</button>
       <button class="filter-btn style-filter-btn" data-filter="traditional" aria-pressed="false">Traditional</button>
       <button class="filter-btn style-filter-btn" data-filter="realism" aria-pressed="false">Realism</button>
       <button class="filter-btn style-filter-btn" data-filter="geometric" aria-pressed="false">Geometric</button>
       <button class="filter-btn style-filter-btn" data-filter="black-grey" aria-pressed="false">Black &amp; Grey</button>
       <button class="filter-btn style-filter-btn" data-filter="color" aria-pressed="false">Color</button>
-      <button class="filter-btn style-filter-btn" data-filter="piercings" aria-pressed="false">Piercings</button>
+    </div>
+
+    <div class="gallery-filter-status" aria-live="polite">
+      <p id="gallery-filter-summary">Showing all artwork</p>
+      <button type="button" class="btn-secondary" id="gallery-clear-filters" hidden>Clear Filters</button>
     </div>
 
     <!-- Photo Grid (populated by gallery.js) -->
@@ -145,5 +149,6 @@
   <script src="js/gallery-data.js?v=cleanup-1"></script>
   <script src="js/gallery.js?v=layout-refine-1"></script>
   <script src="js/countdown.js?v=cleanup-1"></script>
+  <script src="js/reveal.js?v=modern-ui-1"></script>
 </body>
 </html>

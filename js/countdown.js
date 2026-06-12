@@ -30,9 +30,11 @@ function resolvePromoState(promoObj) {
 
     if (state === 'active') {
       var img = promoObj.image
-        ? '<img src="' + promoObj.image + '" alt="' + promoObj.title + ' promo image" class="promo-image">'
+        ? '<img src="' + promoObj.image + '" alt="' + promoObj.title + ' promo image" class="promo-image" loading="lazy" decoding="async">'
         : '';
+      var badge = promoObj.badge ? '<span class="promo-badge">' + promoObj.badge + '</span>' : '';
       var description = promoObj.description ? '<p>' + promoObj.description + '</p>' : '';
+      var terms = promoObj.terms ? '<p class="promo-terms">' + promoObj.terms + '</p>' : '';
       var cta = promoObj.ctaLink
         ? '<a href="' + promoObj.ctaLink + '" class="btn-primary">' + promoObj.ctaText + '</a>'
         : '';
@@ -40,9 +42,13 @@ function resolvePromoState(promoObj) {
       container.innerHTML =
         '<div class="promo-tile">' +
         img +
+        '<div class="promo-copy">' +
+        badge +
         '<h3>' + promoObj.title + '</h3>' +
         description +
-        cta +
+        '<div class="promo-actions">' + cta + '<a href="contact.html" class="btn-secondary">Contact The Shop</a></div>' +
+        terms +
+        '</div>' +
         '</div>';
       return;
     }
@@ -84,6 +90,16 @@ function resolvePromoState(promoObj) {
   }
 
   document.addEventListener('DOMContentLoaded', function () {
+    var promoBar = document.querySelector('.promo-bar');
+    if (promoBar && typeof promo !== 'undefined' && resolvePromoState(promo) === 'active') {
+      promoBar.classList.add('is-visible');
+      promoBar.innerHTML =
+        '<a href="promotions.html">' +
+        '<strong>' + (promo.badge || 'Current Promotion') + ':</strong> ' +
+        promo.title +
+        '</a>';
+    }
+
     var tileContainer = document.getElementById('promo-tile-container');
     if (tileContainer && typeof promo !== 'undefined') {
       renderPromo(tileContainer, promo);

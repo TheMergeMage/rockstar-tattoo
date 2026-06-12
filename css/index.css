@@ -1,8 +1,8 @@
 /* ── Hero ── */
 .hero {
   position: relative;
-  min-height: 50vh;
-  min-height: 50svh;
+  min-height: clamp(34rem, 64vh, 45rem);
+  min-height: clamp(34rem, 64svh, 45rem);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,12 +24,23 @@
   content: '';
   position: absolute;
   inset: 0;
-  background-color: var(--color-overlay);
+  background:
+    radial-gradient(circle at center, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.78) 70%),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.78));
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0;
+  height: 10rem;
+  background: linear-gradient(to bottom, transparent, var(--color-black));
+  pointer-events: none;
 }
 
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   max-width: 945px;
   padding: var(--space-md);
 }
@@ -92,7 +103,7 @@
   align-items: stretch;
   gap: var(--space-xs);
   padding: var(--space-xs);
-  background-color: #050505;
+  background-color: var(--color-surface-inset);
 }
 
 .carousel-slide-cell {
@@ -101,8 +112,8 @@
   min-width: 0;
   display: grid;
   place-items: center;
-  background-color: #111;
-  border: 1px solid rgba(192, 192, 192, 0.1);
+  background-color: var(--color-surface-raised);
+  border: 1px solid var(--color-border-subtle);
   overflow: hidden;
   cursor: pointer;
 }
@@ -117,7 +128,8 @@
 .carousel-section .swiper-slide img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center;
   display: block;
 }
 
@@ -202,8 +214,8 @@ a.carousel-slide-cell {
 }
 
 .service-tile {
-  background-color: #141414;
-  border: 1px solid rgba(192, 192, 192, 0.12);
+  background-color: var(--color-surface-raised);
+  border: 1px solid var(--color-border-subtle);
   border-radius: 4px;
   padding: var(--space-md) var(--space-sm);
   text-align: center;
@@ -213,12 +225,14 @@ a.carousel-slide-cell {
   max-width: 100%;
   overflow: hidden;
   overflow-wrap: anywhere;
-  transition: border-color var(--transition-fast), transform var(--transition-fast);
+  box-shadow: var(--shadow-soft);
+  transition: border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .service-tile:hover {
   border-color: var(--color-red);
   transform: translateY(-2px);
+  box-shadow: var(--shadow-card);
 }
 
 .service-tile h3 {
@@ -252,8 +266,22 @@ a.carousel-slide-cell {
 }
 
 .service-icon {
-  font-size: 2rem;
-  display: block;
+  width: 2.35rem;
+  height: 2.35rem;
+  display: inline-grid;
+  place-items: center;
+  align-self: center;
+  color: var(--color-red);
+}
+
+.service-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 @media (max-width: 767px) {
@@ -390,14 +418,13 @@ a.carousel-slide-cell {
 }
 
 .promo-tile {
-  background-color: #141414;
+  background-color: var(--color-surface-raised);
   border: 1px solid var(--color-red);
   border-radius: 4px;
-  padding: var(--space-md);
   display: grid;
-  place-items: center;
-  gap: var(--space-sm);
-  text-align: center;
+  overflow: hidden;
+  text-align: left;
+  box-shadow: var(--shadow-soft);
 }
 
 .promo-tile h3 {
@@ -407,6 +434,42 @@ a.carousel-slide-cell {
 
 .promo-tile p {
   margin: 0;
+}
+
+.promo-tile .promo-image {
+  width: 100%;
+  height: 14rem;
+  object-fit: cover;
+  display: block;
+}
+
+.promo-copy {
+  display: grid;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+}
+
+.promo-badge {
+  width: fit-content;
+  color: var(--color-white);
+  background-color: var(--color-red);
+  border-radius: 2px;
+  padding: 0.25rem 0.55rem;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.promo-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.promo-terms {
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
 }
 
 .promo-empty-msg {
@@ -471,10 +534,11 @@ a.carousel-slide-cell {
 }
 
 .testimonial-card {
-  background-color: #141414;
-  border: 1px solid rgba(192, 192, 192, 0.12);
+  background-color: var(--color-surface-raised);
+  border: 1px solid var(--color-border-subtle);
   border-radius: 4px;
   padding: var(--space-md);
+  box-shadow: var(--shadow-soft);
 }
 
 .testimonial-stars {
