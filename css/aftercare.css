@@ -100,6 +100,20 @@
   box-shadow: var(--shadow-soft);
 }
 
+.aftercare-panel.is-fading-in {
+  animation: aftercare-panel-fade 1s ease both;
+}
+
+@keyframes aftercare-panel-fade {
+  from {
+    opacity: 0.18;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 .aftercare-panel h2 {
   margin-bottom: var(--space-sm);
   color: var(--color-red);
@@ -224,5 +238,11 @@
   .aftercare-help-panel {
     grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aftercare-panel.is-fading-in {
+    animation: none;
   }
 }

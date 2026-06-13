@@ -87,10 +87,21 @@
     });
   }
 
+  function restartPanelFade(panel) {
+    if (!panel) return;
+    panel.classList.remove('is-fading-in');
+    void panel.offsetWidth;
+    panel.classList.add('is-fading-in');
+    window.setTimeout(function () {
+      if (!panel.hidden) panel.classList.remove('is-fading-in');
+    }, 1000);
+  }
+
   function updateState(type, options) {
     var activeType = normalizeType(type);
     var buttons = document.querySelectorAll('[data-aftercare-target]');
     var panels = document.querySelectorAll('[data-aftercare-panel]');
+    var activePanel = null;
 
     buttons.forEach(function (button) {
       var isActive = button.getAttribute('data-aftercare-target') === activeType;
@@ -101,8 +112,11 @@
     panels.forEach(function (panel) {
       var isActivePanel = panel.getAttribute('data-aftercare-panel') === activeType;
       panel.hidden = !isActivePanel;
+      if (isActivePanel) activePanel = panel;
+      else panel.classList.remove('is-fading-in');
     });
 
+    restartPanelFade(activePanel);
     updateSectionNav(activeType);
     document.title = (activeType === 'piercing' ? 'Piercing Aftercare' : 'Tattoo Aftercare') + ' | Rockstar Tattoo';
 

@@ -16,11 +16,11 @@
   <!-- Site CSS -->
   <link rel="stylesheet" href="css/variables.css?v=logo-jpg-1">
   <link rel="stylesheet" href="css/reset.css?v=layout-refine-1">
-  <link rel="stylesheet" href="css/typography.css?v=cleanup-1">
+  <link rel="stylesheet" href="css/typography.css?v=tag-hide-1">
   <link rel="stylesheet" href="css/header.css?v=menu-adjustments-1">
   <link rel="stylesheet" href="css/nav.css?v=menu-adjustments-1">
   <link rel="stylesheet" href="css/footer.css?v=footer-social-layout-1">
-  <link rel="stylesheet" href="css/gallery.css?v=layout-refine-1">
+  <link rel="stylesheet" href="css/gallery.css?v=gallery-cleanup-1">
 </head>
 <body>
 
@@ -36,9 +36,9 @@
       <a href="gallery.html">Gallery</a>
       <a href="artists.html" class="active">Artists</a>
       <div class="nav-item-dropdown">
-        <button type="button" class="nav-dropdown-toggle" id="aftercare-header-toggle" aria-expanded="false" aria-controls="aftercare-header-menu">
+        <a href="aftercare.html?type=tattoo" class="nav-dropdown-toggle" id="aftercare-header-toggle" aria-expanded="false" aria-controls="aftercare-header-menu">
           Aftercare
-        </button>
+        </a>
         <div class="nav-dropdown-menu" id="aftercare-header-menu" aria-label="Aftercare submenu">
           <a href="aftercare.html?type=tattoo">Tattoo Aftercare</a>
           <a href="aftercare.html?type=piercing">Piercing Aftercare</a>
@@ -83,33 +83,32 @@
 
 
   <!-- Main Content -->
-  <main class="gallery-page artist-detail-page">
+  <main class="gallery-page artist-detail-page" data-artist-name="Martin">
+    <div class="artist-sticky-controls-shell" data-artist-sticky-shell>
+      <div class="artist-sticky-controls" data-artist-sticky-controls>
+        <a href="artists.html" class="btn-secondary artist-back-link" aria-label="Back to Artists">
+          <span class="artist-back-full">Back to Artists</span>
+          <span class="artist-back-compact" aria-hidden="true">&lt; Back</span>
+        </a>
+        <span class="artist-sticky-separator" aria-hidden="true">|</span>
+        <span class="artist-sticky-name" data-artist-sticky-name>Martin</span>
+      </div>
+    </div>
+
     <section class="artist-profile">
       <div class="artist-profile-copy">
         <span class="eyebrow">Artist Profile</span>
         <h1>Martin's Portfolio</h1>
-        <p class="artist-gallery-subtitle">Cultural and custom design work shaped by 22 years of tattooing experience.</p>
+        <p class="artist-known-for">Known for: cultural work, custom design, and bold black and grey pieces.</p>
         <ul class="tag-list" aria-label="Martin specialties">
           <li class="tag-pill">Cultural Design</li>
           <li class="tag-pill">Black & Grey</li>
           <li class="tag-pill">Custom Work</li>
         </ul>
-        <div class="action-row">
-          <a href="tel:7027499914" class="btn-primary">Call About Martin's Work</a>
-          <a href="gallery.html?artist=martin" class="btn-secondary">Filter Martin's Gallery</a>
-        </div>
       </div>
-      <img src="assets/images/Artist-Martin/Martin_Skeleton.JPEG" alt="Skeleton tattoo by Martin at Rockstar Tattoo" width="1800" height="1800" loading="eager">
     </section>
 
     <section class="artist-portfolio-section" aria-label="Martin portfolio gallery">
-      <div class="section-heading-row">
-        <div>
-          <span class="eyebrow">Selected Work</span>
-          <h2>Portfolio</h2>
-        </div>
-        <a href="artists.html" class="btn-secondary">Back to Artists</a>
-      </div>
       <div class="gallery-grid" id="gallery-grid" aria-label="Martin's tattoo portfolio"></div>
     </section>
 
@@ -137,7 +136,7 @@
       </nav>
       <div class="footer-info">
         <a href="tel:7027499914">(702) 749-9914</a>
-        <p class="footer-hours">Monday - Thursday 10am-Midnight<br>Friday-Sunday 10am-2am</p>
+        <p class="footer-hours">Monday-Thursday 10am-Midnight<br>Friday-Sunday 10am-2am</p>
         <p>450 Fremont Suite 109, Las Vegas, NV 89101</p>
       </div>
       <div class="footer-socials" aria-label="Social links">
@@ -154,12 +153,12 @@
   </footer>
 
   <!-- JS -->
-  <script src="js/promos.js?v=cleanup-1"></script>
+  <script src="js/promos.js?v=promo-index-1"></script>
   <script src="js/nav.js?v=cleanup-1"></script>
   <script src="js/countdown.js?v=cleanup-1"></script>
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-  <script src="js/gallery-data.js?v=cleanup-1"></script>
+  <script src="js/gallery-data.js?v=gallery-cleanup-1"></script>
   <script src="js/artist-martin.js?v=cleanup-1"></script>
-  <script src="js/reveal.js?v=modern-ui-1"></script>
+  <script src="js/reveal.js?v=aftercare-reveal-1"></script>
 </body>
 </html>

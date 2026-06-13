@@ -5,7 +5,7 @@
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   var targets = document.querySelectorAll(
-    '.services-section, .gallery-preview-section, .promo-tile-section, .testimonials-section, .final-cta-section, .artist-card, .artist-profile, .artist-conversion-panel, .gallery-section, .contact-detail, .contact-action-panel, .contact-map-panel, .aftercare-panel, .aftercare-help-panel, .promo-tile'
+    '.services-section, .gallery-preview-section, .promo-tile-section, .testimonials-section, .final-cta-section, .artist-card, .artist-profile, .artist-conversion-panel, .gallery-section, .contact-detail, .contact-action-panel, .contact-map-panel, .aftercare-help-panel, .promo-tile'
   );
 
   if (!targets.length) return;

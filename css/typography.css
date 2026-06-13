@@ -98,7 +98,7 @@ p {
 }
 
 .tag-list {
-  display: flex;
+  display: none;
   flex-wrap: wrap;
   gap: 0.45rem;
   margin: 0;
