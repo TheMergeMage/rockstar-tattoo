@@ -25,7 +25,7 @@ var galleryImages = [
   { src: 'assets/images/Artist-Tempt/Tempt_Dark_Sleeve.jpg', alt: 'Dark sleeve tattoo by Tempt', artist: 'tempt', artistName: 'Tempt', style: 'black-grey' },
   { src: 'assets/images/Artist-Tempt/Tempt_Ornamental_Hand.jpg', alt: 'Ornamental hand tattoo by Tempt', artist: 'tempt', artistName: 'Tempt', style: 'black-grey' },
   { src: 'assets/images/Artist-Tempt/Tempt_Adrian_Script.jpg', alt: 'Adrian script tattoo by Tempt', artist: 'tempt', artistName: 'Tempt', style: 'script' },
-  { src: 'assets/images/Artist-Tempt/Tempt_Skeleton_Figure.jpg', alt: 'Skeleton figure tattoo by Tempt', artist: 'tempt', artistName: 'Tempt', style: 'black-grey' },
+  { src: 'assets/images/Artist-Tempt/Tempt_Skeleton_Figure.jpg', alt: 'Skeleton figure tattoo by Tempt', artist: 'tempt', artistName: 'Tempt', style: 'black-grey', showcase: true },
   { src: 'assets/images/Artist-Tempt/Tempt_Woman_Portrait.jpg', alt: 'Woman portrait tattoo by Tempt', artist: 'tempt', artistName: 'Tempt', style: 'black-grey' },
   { src: 'assets/images/Artist-Tempt/Tempt_Haunted_House.jpg', alt: 'Haunted house tattoo by Tempt', artist: 'tempt', artistName: 'Tempt', style: 'black-grey' },
   { src: 'assets/images/Artist-Martin/Martin_Skeleton.JPEG', alt: 'Skeleton tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'black-grey', showcase: true, tags: ['show-homepage'] },
@@ -39,7 +39,7 @@ var galleryImages = [
   { src: 'assets/images/Artist-Brian/Brian_Dia_de_los_Muertos.jpg', alt: 'Dia de los Muertos color tattoo by Brian', artist: 'brian', artistName: 'Brian', style: 'color' },
   { src: 'assets/images/Artist-Brian/Brian_Colored_Hummingbird.jpg', alt: 'Colored hummingbird tattoo by Brian', artist: 'brian', artistName: 'Brian', style: 'color' },
   { src: 'assets/images/Artist-Brian/Brian+Colored+Spring.jpg', alt: 'Colored spring flower tattoo by Brian', artist: 'brian', artistName: 'Brian', style: 'color', tags: ['show-homepage'] },
-  { src: 'assets/images/Artist-Brian/Brian_Red_Snake.jpg', alt: 'Red snake tattoo by Brian', artist: 'brian', artistName: 'Brian', style: 'color' },
+  { src: 'assets/images/Artist-Brian/Brian_Red_Snake.jpg', alt: 'Red snake tattoo by Brian', artist: 'brian', artistName: 'Brian', style: 'color', showcase: true },
   { src: 'assets/images/Artist-Brian/Brian_Rose.jpg', alt: 'Rose tattoo by Brian', artist: 'brian', artistName: 'Brian', style: 'color' },
   { src: 'assets/images/Artist-Brian/Brian_Cityscape.jpg', alt: 'Cityscape tattoo by Brian', artist: 'brian', artistName: 'Brian', style: 'black-grey' },
   { src: 'assets/images/Artist-Brian/Brian_Chicano_Skull.jpg', alt: 'Chicano skull tattoo by Brian', artist: 'brian', artistName: 'Brian', style: 'black-grey' },
@@ -47,7 +47,7 @@ var galleryImages = [
   { src: 'assets/images/Artist-Brian/Brian_Landscape_Leg_Sleeves.jpg', alt: 'Landscape leg sleeve tattoos by Brian', artist: 'brian', artistName: 'Brian', style: 'color' },
   { src: 'assets/images/Artist-Brian/Brian_Mountain_Landscape.jpg', alt: 'Mountain landscape tattoo by Brian', artist: 'brian', artistName: 'Brian', style: 'color' },
   { src: 'assets/images/Artist-Brian/Brian_Angel.jpg', alt: 'Angel tattoo by Brian', artist: 'brian', artistName: 'Brian', style: 'black-grey' },
-  { src: 'assets/images/Artist-Brian/Brian_Mermaid.jpg', alt: 'Mermaid tattoo by Brian', artist: 'brian', artistName: 'Brian', style: 'color' },
+  { src: 'assets/images/Artist-Brian/Brian_Mermaid.jpg', alt: 'Mermaid tattoo by Brian', artist: 'brian', artistName: 'Brian', style: 'color', showcase: true },
   { src: 'assets/images/Artist-Brian/Brian_Floral_Color.jpg', alt: 'Floral color tattoo by Brian', artist: 'brian', artistName: 'Brian', style: 'color' },
 ];
 
@@ -86,11 +86,11 @@ function getHomepageGalleryImages() {
 }
 
 function getShowcaseImages() {
-  return artistDisplayOrder.map(function (artist) {
-    return galleryImages.find(function (img) {
+  return artistDisplayOrder.reduce(function (images, artist) {
+    return images.concat(galleryImages.filter(function (img) {
       return img.artist === artist && img.showcase;
-    });
-  }).filter(Boolean);
+    }));
+  }, []);
 }
 
 function createGalleryLink(img, options) {
@@ -316,6 +316,29 @@ function setupArtistStickyControls(artist, grid) {
   updateControls();
 }
 
+function setupArtistBioToggles() {
+  document.querySelectorAll('[data-artist-bio-toggle]').forEach(function (button) {
+    var bioId = button.getAttribute('aria-controls');
+    var bio = bioId ? document.getElementById(bioId) : null;
+    if (!bio) {
+      var profileCopy = button.closest('.artist-profile-copy');
+      bio = profileCopy ? profileCopy.querySelector('[data-artist-bio]') : null;
+    }
+
+    if (!bio) return;
+
+    button.addEventListener('click', function () {
+      var isExpanded = button.getAttribute('aria-expanded') === 'true';
+      var shouldExpand = !isExpanded;
+
+      bio.classList.toggle('is-expanded', shouldExpand);
+      button.setAttribute('aria-expanded', shouldExpand ? 'true' : 'false');
+      button.textContent = shouldExpand ? 'Click to collapse' : 'Click to expand';
+      window.dispatchEvent(new Event('resize'));
+    });
+  });
+}
+
 function renderArtistGallery(artist, galleryName) {
   document.addEventListener('DOMContentLoaded', function () {
     var grid = document.getElementById('gallery-grid');
@@ -331,6 +354,7 @@ function renderArtistGallery(artist, galleryName) {
     });
 
     initImageLightbox('.' + lightboxClass);
+    setupArtistBioToggles();
     setupArtistStickyControls(artist, grid);
   });
 }

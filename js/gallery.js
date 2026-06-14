@@ -32,10 +32,14 @@
     grid.className = 'gallery-section-grid';
 
     images.forEach(function (img) {
+      var contextLabel = typeof settings.contextLabel === 'function'
+        ? settings.contextLabel(img)
+        : settings.contextLabel;
+
       grid.appendChild(createGalleryLink(img, {
         className: 'gallery-item glightbox gallery-lightbox',
         galleryName: settings.galleryName,
-        contextLabel: settings.contextLabel,
+        contextLabel: contextLabel,
       }));
     });
 
@@ -108,7 +112,9 @@
       grid.appendChild(buildGallerySection('Artist Showcase', getShowcaseImages(), {
         section: 'showcase',
         galleryName: 'gallery-all',
-        contextLabel: 'Showcase',
+        contextLabel: function (img) {
+          return img.artistName || artistDisplayNames[img.artist] || '';
+        },
       }));
     }
 

@@ -518,6 +518,12 @@ a.carousel-slide-cell {
   margin-bottom: var(--space-md);
 }
 
+.testimonials-viewport {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  overflow: hidden;
+}
+
 .testimonials-grid {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -537,8 +543,70 @@ a.carousel-slide-cell {
   background-color: var(--color-surface-raised);
   border: 1px solid var(--color-border-subtle);
   border-radius: 4px;
-  padding: var(--space-md);
+  height: auto;
+  padding: var(--space-sm);
   box-shadow: var(--shadow-soft);
+}
+
+.testimonials-viewport.is-carousel-ready {
+  max-width: min(1120px, 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
+}
+
+.testimonials-viewport.is-carousel-ready .testimonials-grid {
+  max-width: none;
+  width: max-content;
+  margin: 0;
+  display: flex;
+  grid-template-columns: none;
+  align-items: stretch;
+  gap: var(--space-sm);
+  animation: testimonials-scroll 78s linear infinite;
+  will-change: transform;
+}
+
+.testimonials-viewport.is-carousel-ready .testimonial-card {
+  flex: 0 0 clamp(338px, 88vw, 442px);
+}
+
+.testimonials-viewport.is-carousel-ready:hover .testimonials-grid,
+.testimonials-viewport.is-carousel-ready:focus-within .testimonials-grid {
+  animation-play-state: paused;
+}
+
+@media (min-width: 768px) {
+  .testimonials-viewport.is-carousel-ready .testimonial-card {
+    flex-basis: clamp(390px, 39vw, 481px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .testimonials-viewport.is-carousel-ready {
+    overflow-x: auto;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .testimonials-viewport.is-carousel-ready .testimonials-grid {
+    animation: none;
+    padding-bottom: var(--space-xs);
+    scroll-snap-type: x proximity;
+  }
+
+  .testimonials-viewport.is-carousel-ready .testimonial-card {
+    scroll-snap-align: start;
+  }
+}
+
+@keyframes testimonials-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .testimonial-stars {

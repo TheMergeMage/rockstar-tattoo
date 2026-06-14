@@ -109,6 +109,39 @@
   font-size: 1rem;
 }
 
+.artist-full-bio {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 76ch;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+}
+
+.artist-full-bio:not(.is-expanded) {
+  display: -webkit-box;
+  max-height: 6.6em;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+
+.artist-bio-extra {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.artist-full-bio p {
+  margin: 0;
+}
+
+.artist-bio-toggle {
+  width: max-content;
+  max-width: 100%;
+  margin-top: 0.1rem;
+  padding-block: 0.55rem;
+  font-size: 0.82rem;
+}
+
 .section-heading-row {
   display: flex;
   flex-wrap: wrap;
