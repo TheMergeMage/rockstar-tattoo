@@ -550,6 +550,7 @@ a.carousel-slide-cell {
 
 .testimonials-viewport.is-carousel-ready {
   max-width: min(1120px, 100%);
+  touch-action: pan-y;
   -webkit-mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
   mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent);
 }
@@ -568,6 +569,7 @@ a.carousel-slide-cell {
 
 .testimonials-viewport.is-carousel-ready .testimonial-card {
   flex: 0 0 clamp(338px, 88vw, 442px);
+  cursor: pointer;
 }
 
 .testimonials-controls {
