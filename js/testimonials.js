@@ -2,7 +2,7 @@
 
 (function () {
   var DESKTOP_MATCH_SPEED = 51; // px/sec, matching the previous full-size desktop pace.
-  var SNAP_PROFILE = 'magnetic';
+  var SNAP_PROFILE = 'spring';
   var CARD_DWELL_FLOOR = 75;
   var CARD_DWELL_BASE = 6000;
   var CARD_DWELL_PER_CHAR = 45;
