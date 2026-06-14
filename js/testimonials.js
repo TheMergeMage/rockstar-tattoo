@@ -2,6 +2,7 @@
 
 (function () {
   var DESKTOP_MATCH_SPEED = 51; // px/sec, matching the previous full-size desktop pace.
+  var AUTOPLAY_DIRECTION = -1;
   var SNAP_PROFILE = 'spring';
   var CARD_DWELL_FLOOR = 75;
   var CARD_DWELL_BASE = 6000;
@@ -400,7 +401,7 @@
           updateTweenMotion(activeMotion, frameTime);
         }
       } else if (!isAutoPaused()) {
-        offset = normalizeOffset(offset + DESKTOP_MATCH_SPEED * elapsed);
+        offset = normalizeOffset(offset + AUTOPLAY_DIRECTION * DESKTOP_MATCH_SPEED * elapsed);
         applyOffset();
       }
 

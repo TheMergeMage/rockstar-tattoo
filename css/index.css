@@ -569,6 +569,7 @@ a.carousel-slide-cell {
 
 .testimonials-viewport.is-carousel-ready .testimonial-card {
   flex: 0 0 clamp(338px, 88vw, 442px);
+  padding-inline: calc(var(--space-sm) + 0.5rem);
   cursor: pointer;
 }
 
@@ -616,6 +617,7 @@ a.carousel-slide-cell {
 @media (min-width: 768px) {
   .testimonials-viewport.is-carousel-ready .testimonial-card {
     flex-basis: clamp(390px, 39vw, 481px);
+    padding-inline: var(--space-sm);
   }
 }
 
