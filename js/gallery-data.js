@@ -80,7 +80,7 @@ var galleryImages = [
   { src: 'assets/images/Artist-Martin/Martin_Rose_Name_Forearm.jpg', alt: 'Rose name forearm tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'color' },
   { src: 'assets/images/Artist-Martin/Martin_Cultural_Masks.jpg', alt: 'Cultural masks tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'black-grey', showcase: true, tags: ['show-homepage', 'show-carousel'] },
   { src: 'assets/images/Artist-Martin/Martin_Snake_Rose.jpg', alt: 'Snake and rose tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'traditional' },
-  { src: 'assets/images/Artist-Martin/Martin_Angel_Backpiece.jpg', alt: 'Angel backpiece tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'black-grey' },
+  { src: 'assets/images/Artist-Martin/Martin_Angel_Backpiece.jpg', alt: 'Angel backpiece tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'black-grey', tags: ['show-carousel'] },
   { src: 'assets/images/Artist-Martin/Martin_Color_Elephant.jpg', alt: 'Color elephant tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'color' },
   { src: 'assets/images/Artist-Martin/Martin_Skull_Palms.jpg', alt: 'Skull and palms tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'black-grey' },
   { src: 'assets/images/Artist-Martin/Martin_Samurai_Backpiece.jpg', alt: 'Samurai backpiece tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'traditional', tags: ['show-carousel'] },
@@ -191,9 +191,63 @@ function getBalancedGalleryImagesByArtist(images) {
   return balanced;
 }
 
+function getGalleryArtistCounts(images) {
+  return images.reduce(function (counts, img) {
+    counts[img.artist] = (counts[img.artist] || 0) + 1;
+    return counts;
+  }, {});
+}
+
+function getNextCarouselPaddingImage(images, selectedSrcs) {
+  var counts = getGalleryArtistCounts(images);
+  var fewestCount = null;
+  var artistsByNeed = artistDisplayOrder.slice().sort(function (a, b) {
+    var countA = counts[a] || 0;
+    var countB = counts[b] || 0;
+
+    if (countA !== countB) return countA - countB;
+    return artistDisplayOrder.indexOf(a) - artistDisplayOrder.indexOf(b);
+  });
+
+  if (artistsByNeed.length) {
+    fewestCount = counts[artistsByNeed[0]] || 0;
+  }
+
+  for (var i = 0; i < artistsByNeed.length; i += 1) {
+    var artist = artistsByNeed[i];
+    var artistCount = counts[artist] || 0;
+    if (fewestCount !== null && artistCount > fewestCount) break;
+
+    var artistCandidate = galleryImages.find(function (img) {
+      return img.artist === artist && selectedSrcs.indexOf(img.src) === -1;
+    });
+
+    if (artistCandidate) return artistCandidate;
+  }
+
+  return galleryImages.find(function (img) {
+    return selectedSrcs.indexOf(img.src) === -1;
+  }) || null;
+}
+
+function normalizeCarouselImageCount(images) {
+  var normalized = images.slice();
+  var selectedSrcs = normalized.map(function (img) { return img.src; });
+
+  while (normalized.length % 4 !== 0) {
+    var nextImage = getNextCarouselPaddingImage(normalized, selectedSrcs);
+    if (!nextImage) break;
+
+    normalized.push(nextImage);
+    selectedSrcs.push(nextImage.src);
+  }
+
+  return normalized.slice(0, normalized.length - (normalized.length % 4));
+}
+
 function getHomepageCarouselImages() {
   var carouselImages = getGalleryImagesByTag('show-carousel');
-  return getBalancedGalleryImagesByArtist(carouselImages.length ? carouselImages : galleryImages);
+  return normalizeCarouselImageCount(getBalancedGalleryImagesByArtist(carouselImages.length ? carouselImages : galleryImages));
 }
 
 function getShowcaseImages() {
