@@ -5,6 +5,9 @@
     var wrapper = document.querySelector('.swiper-wrapper');
     if (!wrapper || typeof galleryImages === 'undefined') return;
 
+    var carouselImages = typeof getHomepageCarouselImages === 'function'
+      ? getHomepageCarouselImages()
+      : galleryImages;
     var swiper = null;
     var carouselLightbox = null;
     var autoplayWasRunning = false;
@@ -51,7 +54,7 @@
       if (typeof GLightbox === 'undefined') return null;
 
       return GLightbox({
-        elements: galleryImages.map(function (img) {
+        elements: carouselImages.map(function (img) {
           return {
             href: img.src,
             type: 'image',
@@ -66,8 +69,8 @@
 
     wrapper.innerHTML = '';
 
-    for (var start = 0; start < galleryImages.length; start += 4) {
-      var group = galleryImages.slice(start, start + 4);
+    for (var start = 0; start < carouselImages.length; start += 4) {
+      var group = carouselImages.slice(start, start + 4);
       var div = document.createElement('div');
       div.className = 'swiper-slide';
 

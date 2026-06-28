@@ -9,6 +9,7 @@
   <meta property="og:description" content="Browse tattoo work by Rockstar Tattoo artists.">
   <meta property="og:image" content="assets/images/rockstar-logo.jpg">
   <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.ico" sizes="any">
 
   <!-- GLightbox CDN -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
@@ -87,12 +88,13 @@
     <h1>Our Work</h1>
 
     <!-- Filter Bar -->
-    <div class="filter-bar artist-filter-bar" role="group" aria-label="Filter by artist">
+    <div class="filter-bar artist-filter-bar" role="group" aria-label="Filter by artist" data-gallery-artist-filters>
       <button class="filter-btn artist-filter-btn active" data-artist="all" aria-pressed="true">All</button>
       <button class="filter-btn artist-filter-btn" data-artist="brian" aria-pressed="false">Brian</button>
       <button class="filter-btn artist-filter-btn" data-artist="martin" aria-pressed="false">Martin</button>
       <button class="filter-btn artist-filter-btn" data-artist="tempt" aria-pressed="false">Tempt</button>
     </div>
+    <div class="filter-bar style-filter-bar" role="group" aria-label="Filter by style" data-gallery-style-filters></div>
 
     <div class="gallery-filter-status" aria-live="polite">
       <p id="gallery-filter-summary">Showing all artwork</p>
@@ -137,8 +139,8 @@
   <script src="js/promos.js?v=promo-index-1"></script>
   <script src="js/nav.js?v=cleanup-1"></script>
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-  <script src="js/gallery-data.js?v=gallery-cleanup-1"></script>
-  <script src="js/gallery.js?v=gallery-cleanup-1"></script>
+  <script src="js/gallery-data.js?v=martin-library-1"></script>
+  <script src="js/gallery.js?v=martin-library-1"></script>
   <script src="js/countdown.js?v=cleanup-1"></script>
   <script src="js/reveal.js?v=aftercare-reveal-1"></script>
 </body>
