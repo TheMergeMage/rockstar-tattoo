@@ -39,6 +39,7 @@
       var cell = createGalleryLink(item, {
         className: 'carousel-slide-cell carousel-lightbox',
         galleryName: 'homepage-carousel',
+        contextLabel: item.artistName || artistDisplayNames[item.artist] || '',
         imageIndex: imageIndex,
         loading: imageIndex === 0 ? 'eager' : 'lazy',
       });
@@ -87,6 +88,9 @@
     }
 
     carouselLightbox = initCarouselLightbox();
+    if (carouselLightbox && typeof setupLightboxContextBadge === 'function') {
+      setupLightboxContextBadge(carouselLightbox, '.carousel-lightbox');
+    }
 
     wrapper.addEventListener('click', function (event) {
       var trigger = event.target.closest('.carousel-lightbox');

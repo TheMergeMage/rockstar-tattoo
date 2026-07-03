@@ -24,6 +24,7 @@
       grid.appendChild(createGalleryLink(img, {
         className: 'homepage-gallery-item homepage-preview-lightbox',
         galleryName: 'homepage-preview',
+        contextLabel: img.artistName || artistDisplayNames[img.artist] || '',
       }));
     });
 
@@ -39,6 +40,8 @@
     ctaAnchor.setAttribute('aria-hidden', 'true');
     grid.appendChild(ctaAnchor);
 
-    initImageLightbox('.homepage-preview-lightbox');
+    initImageLightbox('.homepage-preview-lightbox', {
+      contextBadge: true,
+    });
   });
 })();

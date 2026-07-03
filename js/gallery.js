@@ -14,7 +14,15 @@
   function normalizeStyle(value) {
     if (!value || value === 'all') return 'all';
 
-    return galleryImages.some(function (img) { return img.style === value; }) ? value : 'all';
+    return galleryImages.some(function (img) { return matchesImageStyle(img, value); }) ? value : 'all';
+  }
+
+  function matchesImageStyle(img, style) {
+    if (typeof imageMatchesStyle === 'function') {
+      return imageMatchesStyle(img, style);
+    }
+
+    return img.style === style;
   }
 
   function getStyleDisplayName(style) {
@@ -26,7 +34,7 @@
   function getFilteredImages() {
     return galleryImages.filter(function (img) {
       var matchesArtist = state.artist === 'all' || img.artist === state.artist;
-      var matchesStyle = state.style === 'all' || img.style === state.style;
+      var matchesStyle = state.style === 'all' || matchesImageStyle(img, state.style);
       return matchesArtist && matchesStyle;
     });
   }

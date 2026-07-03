@@ -1,9 +1,10 @@
 /* gallery-data.js - shared tattoo gallery image source */
 
-var artistDisplayOrder = ['tempt', 'brian', 'martin'];
+var artistDisplayOrder = ['tempt', 'brian', 'martin', 'danny'];
 
 var artistDisplayNames = {
   brian: 'Brian',
+  danny: 'Danny',
   martin: 'Martin',
   tempt: 'Tempt',
 };
@@ -25,17 +26,17 @@ var galleryImages = [
   { src: 'assets/images/Artist-Tempt/Tempt_Colored_Garden.jpg', alt: 'Colored garden tattoo by Tempt', artist: 'tempt', artistName: 'Tempt', style: 'color' },
   { src: 'assets/images/Artist-Tempt/Tempt_Peonies.jpg', alt: 'Peonies tattoo by Tempt', artist: 'tempt', artistName: 'Tempt', style: 'color', tags: ['show-homepage', 'show-carousel'] },
   { src: 'assets/images/Artist-Tempt/Tempt_Koi.jpg', alt: 'Koi fish tattoo by Tempt', artist: 'tempt', artistName: 'Tempt', style: 'traditional', tags: ['show-homepage', 'show-carousel'] },
-  { src: 'assets/images/Artist-Tempt/Tempt_Snake_Sleeve.jpg', alt: 'Snake sleeve tattoo by Tempt', artist: 'tempt', artistName: 'Tempt', style: 'black-grey' },
+  { src: 'assets/images/Artist-Tempt/Tempt_Snake_Sleeve.jpg', alt: 'Snake sleeve tattoo by Tempt', artist: 'tempt', artistName: 'Tempt', style: 'black-grey', styleTags: ['traditional'] },
   { src: 'assets/images/Artist-Tempt/Tempt+3_pic_sleeve.jpg', alt: 'Multi-image sleeve tattoo by Tempt', artist: 'tempt', artistName: 'Tempt', style: 'geometric' },
   { src: 'assets/images/Artist-Tempt/Tempt_New_3976.jpg', alt: 'Floral figure tattoo by Tempt', artist: 'tempt', artistName: 'Tempt', style: 'black-grey' },
   { src: 'assets/images/Artist-Tempt/Tempt_Dragon_Back.jpg', alt: 'Dragon back tattoo by Tempt', artist: 'tempt', artistName: 'Tempt', style: 'traditional' },
   { src: 'assets/images/Artist-Tempt/Tempt_Seahorse_Sleeve.jpg', alt: 'Seahorse sleeve tattoo by Tempt', artist: 'tempt', artistName: 'Tempt', style: 'black-grey' },
   { src: 'assets/images/Artist-Tempt/Tempt_Chain_Sword.jpg', alt: 'Chain and sword tattoo by Tempt', artist: 'tempt', artistName: 'Tempt', style: 'black-grey' },
   { src: 'assets/images/Artist-Tempt/Tempt_Dark_Sleeve.jpg', alt: 'Dark sleeve tattoo by Tempt', artist: 'tempt', artistName: 'Tempt', style: 'black-grey' },
-  { src: 'assets/images/Artist-Tempt/Tempt_Ornamental_Hand.jpg', alt: 'Ornamental hand tattoo by Tempt', artist: 'tempt', artistName: 'Tempt', style: 'black-grey' },
+  { src: 'assets/images/Artist-Tempt/Tempt_Ornamental_Hand.jpg', alt: 'Ornamental hand tattoo by Tempt', artist: 'tempt', artistName: 'Tempt', style: 'black-grey', styleTags: ['geometric'] },
   { src: 'assets/images/Artist-Tempt/Tempt_Adrian_Script.jpg', alt: 'Adrian script tattoo by Tempt', artist: 'tempt', artistName: 'Tempt', style: 'script' },
   { src: 'assets/images/Artist-Tempt/Tempt_Skeleton_Figure.jpg', alt: 'Skeleton figure tattoo by Tempt', artist: 'tempt', artistName: 'Tempt', style: 'black-grey', showcase: true, tags: ['show-carousel'] },
-  { src: 'assets/images/Artist-Tempt/Tempt_Woman_Portrait.jpg', alt: 'Woman portrait tattoo by Tempt', artist: 'tempt', artistName: 'Tempt', style: 'black-grey', tags: ['show-carousel'] },
+  { src: 'assets/images/Artist-Tempt/Tempt_Woman_Portrait.jpg', alt: 'Woman portrait tattoo by Tempt', artist: 'tempt', artistName: 'Tempt', style: 'black-grey', styleTags: ['realism'], tags: ['show-carousel'] },
   { src: 'assets/images/Artist-Tempt/Tempt_Haunted_House.jpg', alt: 'Haunted house tattoo by Tempt', artist: 'tempt', artistName: 'Tempt', style: 'black-grey' },
   { src: 'assets/images/Artist-Martin/Martin_Skeleton.JPEG', alt: 'Skeleton tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'black-grey', showcase: true, tags: ['show-homepage', 'show-carousel'] },
   { src: 'assets/images/Artist-Martin/Martin_Mini_Skull_Lady.JPEG', alt: 'Mini skull lady tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'black-grey' },
@@ -45,19 +46,19 @@ var galleryImages = [
   { src: 'assets/images/Artist-Martin/Martin_Portrait_Coverup.jpg', alt: 'Portrait coverup tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'realism' },
   { src: 'assets/images/Artist-Martin/Martin_Dolphin_Floral.jpg', alt: 'Dolphin floral tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'color' },
   { src: 'assets/images/Artist-Martin/Martin_Green_Mask_Portrait.jpg', alt: 'Green mask portrait tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'color' },
-  { src: 'assets/images/Artist-Martin/Martin_Rose_Shoulder_Piece.jpg', alt: 'Rose shoulder tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'black-grey' },
+  { src: 'assets/images/Artist-Martin/Martin_Rose_Shoulder_Piece.jpg', alt: 'Rose shoulder tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'black-grey', styleTags: ['traditional'] },
   { src: 'assets/images/Artist-Martin/Martin_Eagle_Wolf.jpg', alt: 'Eagle and wolf tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'black-grey' },
   { src: 'assets/images/Artist-Martin/Martin_Cross_Arm_Piece.jpg', alt: 'Cross arm tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'black-grey' },
   { src: 'assets/images/Artist-Martin/Martin_Minnie_Love.jpg', alt: 'Minnie love tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'color' },
   { src: 'assets/images/Artist-Martin/Martin_Floral_Arm_Piece.jpg', alt: 'Floral arm tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'black-grey', tags: ['show-carousel'] },
   { src: 'assets/images/Artist-Martin/Martin_Geometric_Cross.jpg', alt: 'Geometric cross tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'geometric' },
   { src: 'assets/images/Artist-Martin/Martin_Poker_Chips_Clover.jpg', alt: 'Poker chips and clover tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'color' },
-  { src: 'assets/images/Artist-Martin/Martin_Orange_Butterfly.jpg', alt: 'Orange butterfly tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'color' },
+  { src: 'assets/images/Artist-Martin/Martin_Orange_Butterfly.jpg', alt: 'Orange butterfly tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'color', styleTags: ['traditional'] },
   { src: 'assets/images/Artist-Martin/Martin_Pink_Dolphin.jpg', alt: 'Pink dolphin tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'color' },
   { src: 'assets/images/Artist-Martin/Martin_Rose_Clock_Forearm.jpg', alt: 'Rose and clock forearm tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'color' },
   { src: 'assets/images/Artist-Martin/Martin_Superman_Emblem.jpg', alt: 'Superman emblem tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'geometric' },
   { src: 'assets/images/Artist-Martin/Martin_Behind_Ear_Rose.jpg', alt: 'Behind the ear rose tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'color' },
-  { src: 'assets/images/Artist-Martin/Martin_Rose_Forearm.jpg', alt: 'Rose forearm tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'black-grey' },
+  { src: 'assets/images/Artist-Martin/Martin_Rose_Forearm.jpg', alt: 'Rose forearm tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'black-grey', styleTags: ['traditional'] },
   { src: 'assets/images/Artist-Martin/Martin_Floral_Name_Sleeve.jpg', alt: 'Floral name sleeve tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'black-grey' },
   { src: 'assets/images/Artist-Martin/Martin_Portrait_Clock.jpg', alt: 'Portrait and clock tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'black-grey' },
   { src: 'assets/images/Artist-Martin/Martin_Phoenix_Forearm.jpg', alt: 'Phoenix forearm tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'black-grey' },
@@ -67,7 +68,7 @@ var galleryImages = [
   { src: 'assets/images/Artist-Martin/Martin_Red_Rose_Hand.jpg', alt: 'Red rose hand tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'color', tags: ['show-carousel'] },
   { src: 'assets/images/Artist-Martin/Martin_Skull_Fedora.jpg', alt: 'Skull fedora tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'black-grey' },
   { src: 'assets/images/Artist-Martin/Martin_Lily_Floral.jpg', alt: 'Lily floral tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'color' },
-  { src: 'assets/images/Artist-Martin/Martin_Venom_Portrait.jpg', alt: 'Venom portrait tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'color' },
+  { src: 'assets/images/Artist-Martin/Martin_Venom_Portrait.jpg', alt: 'Venom portrait tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'color', styleTags: ['realism'] },
   { src: 'assets/images/Artist-Martin/Martin_Skull_Sleeve.jpg', alt: 'Skull sleeve tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'black-grey' },
   { src: 'assets/images/Artist-Martin/Martin_Shoulder_Floral.jpg', alt: 'Shoulder floral tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'black-grey' },
   { src: 'assets/images/Artist-Martin/Martin_Tiger_Portrait.jpg', alt: 'Tiger portrait tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'realism', showcase: true, tags: ['show-homepage', 'show-carousel'] },
@@ -88,38 +89,66 @@ var galleryImages = [
   { src: 'assets/images/Artist-Martin/Martin_Anchor.jpg', alt: 'Anchor tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'traditional' },
   { src: 'assets/images/Artist-Martin/Martin_Flamingo.jpg', alt: 'Flamingo tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'color' },
   { src: 'assets/images/Artist-Martin/Martin_Flaming_Dice.jpg', alt: 'Flaming dice tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'traditional' },
-  { src: 'assets/images/Artist-Martin/Martin_Back_Ornamental.jpg', alt: 'Back ornamental tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'black-grey' },
+  { src: 'assets/images/Artist-Martin/Martin_Back_Ornamental.jpg', alt: 'Back ornamental tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'black-grey', styleTags: ['geometric'] },
   { src: 'assets/images/Artist-Martin/Martin_Floral_Script_Arm.jpg', alt: 'Floral script arm tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'script' },
-  { src: 'assets/images/Artist-Martin/Martin_Ornamental_Color.jpg', alt: 'Ornamental color tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'color' },
+  { src: 'assets/images/Artist-Martin/Martin_Ornamental_Color.jpg', alt: 'Ornamental color tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'color', styleTags: ['geometric'] },
   { src: 'assets/images/Artist-Martin/Martin_Scroll_Forearm.jpg', alt: 'Scroll forearm tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'black-grey' },
   { src: 'assets/images/Artist-Martin/Martin_Hand_Rose.jpg', alt: 'Hand rose tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'black-grey' },
-  { src: 'assets/images/Artist-Martin/Martin_Statue_Portrait.jpg', alt: 'Statue portrait tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'black-grey' },
-  { src: 'assets/images/Artist-Martin/Martin_Woman_Portrait.jpg', alt: 'Woman portrait tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'black-grey' },
+  { src: 'assets/images/Artist-Martin/Martin_Statue_Portrait.jpg', alt: 'Statue portrait tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'black-grey', styleTags: ['realism'] },
+  { src: 'assets/images/Artist-Martin/Martin_Woman_Portrait.jpg', alt: 'Woman portrait tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'black-grey', styleTags: ['realism'] },
   { src: 'assets/images/Artist-Martin/Martin_Interstate_Eagle.jpg', alt: 'Interstate eagle tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'black-grey' },
   { src: 'assets/images/Artist-Martin/Martin_Pumpkin_Candy.jpg', alt: 'Pumpkin candy tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'color' },
   { src: 'assets/images/Artist-Martin/Martin_Skull_Portrait.jpg', alt: 'Skull portrait tattoo by Martin', artist: 'martin', artistName: 'Martin', style: 'black-grey' },
-  { src: 'assets/images/Artist-Brian/Brian_Lion.jpg', alt: 'Lion color tattoo by Brian', artist: 'brian', artistName: 'Brian', style: 'color', tags: ['show-homepage', 'show-carousel'] },
-  { src: 'assets/images/Artist-Brian/Brian_Dragon_Star.jpg', alt: 'Dragon and star color tattoo by Brian', artist: 'brian', artistName: 'Brian', style: 'color', showcase: true, tags: ['show-carousel'] },
-  { src: 'assets/images/Artist-Brian/Brian_Colored_Rose.jpg', alt: 'Colored rose tattoo by Brian', artist: 'brian', artistName: 'Brian', style: 'color' },
+  { src: 'assets/images/Artist-Brian/Brian_Lion.jpg', alt: 'Lion color tattoo by Brian', artist: 'brian', artistName: 'Brian', style: 'color', styleTags: ['realism'], tags: ['show-homepage', 'show-carousel'] },
+  { src: 'assets/images/Artist-Brian/Brian_Dragon_Star.jpg', alt: 'Dragon and star color tattoo by Brian', artist: 'brian', artistName: 'Brian', style: 'color', styleTags: ['geometric', 'traditional'], showcase: true, tags: ['show-homepage', 'show-carousel'] },
+  { src: 'assets/images/Artist-Brian/Brian_Colored_Rose.jpg', alt: 'Colored rose tattoo by Brian', artist: 'brian', artistName: 'Brian', style: 'color', styleTags: ['traditional'] },
   { src: 'assets/images/Artist-Brian/Brian_Dove.jpg', alt: 'Dove tattoo by Brian', artist: 'brian', artistName: 'Brian', style: 'black-grey', tags: ['show-homepage', 'show-carousel'] },
   { src: 'assets/images/Artist-Brian/Brian_Princess.jpg', alt: 'Princess tattoo by Brian', artist: 'brian', artistName: 'Brian', style: 'color' },
   { src: 'assets/images/Artist-Brian/Brian_Dia_de_los_Muertos.jpg', alt: 'Dia de los Muertos color tattoo by Brian', artist: 'brian', artistName: 'Brian', style: 'color' },
   { src: 'assets/images/Artist-Brian/Brian_Colored_Hummingbird.jpg', alt: 'Colored hummingbird tattoo by Brian', artist: 'brian', artistName: 'Brian', style: 'color' },
-  { src: 'assets/images/Artist-Brian/Brian+Colored+Spring.jpg', alt: 'Colored spring flower tattoo by Brian', artist: 'brian', artistName: 'Brian', style: 'color', tags: ['show-homepage'] },
-  { src: 'assets/images/Artist-Brian/Brian_Red_Snake.jpg', alt: 'Red snake tattoo by Brian', artist: 'brian', artistName: 'Brian', style: 'color', showcase: true, tags: ['show-carousel'] },
-  { src: 'assets/images/Artist-Brian/Brian_Rose.jpg', alt: 'Rose tattoo by Brian', artist: 'brian', artistName: 'Brian', style: 'color' },
+  { src: 'assets/images/Artist-Brian/Brian+Colored+Spring.jpg', alt: 'Colored spring flower tattoo by Brian', artist: 'brian', artistName: 'Brian', style: 'color' },
+  { src: 'assets/images/Artist-Brian/Brian_Red_Snake.jpg', alt: 'Red snake tattoo by Brian', artist: 'brian', artistName: 'Brian', style: 'color', styleTags: ['traditional'], showcase: true, tags: ['show-carousel'] },
+  { src: 'assets/images/Artist-Brian/Brian_Rose.jpg', alt: 'Rose tattoo by Brian', artist: 'brian', artistName: 'Brian', style: 'color', styleTags: ['traditional'] },
   { src: 'assets/images/Artist-Brian/Brian_Cityscape.jpg', alt: 'Cityscape tattoo by Brian', artist: 'brian', artistName: 'Brian', style: 'black-grey' },
   { src: 'assets/images/Artist-Brian/Brian_Chicano_Skull.jpg', alt: 'Chicano skull tattoo by Brian', artist: 'brian', artistName: 'Brian', style: 'black-grey' },
-  { src: 'assets/images/Artist-Brian/Brian_Color_Portrait.jpg', alt: 'Color portrait tattoo by Brian', artist: 'brian', artistName: 'Brian', style: 'color', tags: ['show-carousel'] },
+  { src: 'assets/images/Artist-Brian/Brian_Color_Portrait.jpg', alt: 'Color portrait tattoo by Brian', artist: 'brian', artistName: 'Brian', style: 'color', styleTags: ['realism'], tags: ['show-carousel'] },
   { src: 'assets/images/Artist-Brian/Brian_Landscape_Leg_Sleeves.jpg', alt: 'Landscape leg sleeve tattoos by Brian', artist: 'brian', artistName: 'Brian', style: 'color' },
   { src: 'assets/images/Artist-Brian/Brian_Mountain_Landscape.jpg', alt: 'Mountain landscape tattoo by Brian', artist: 'brian', artistName: 'Brian', style: 'color' },
   { src: 'assets/images/Artist-Brian/Brian_Angel.jpg', alt: 'Angel tattoo by Brian', artist: 'brian', artistName: 'Brian', style: 'black-grey' },
   { src: 'assets/images/Artist-Brian/Brian_Mermaid.jpg', alt: 'Mermaid tattoo by Brian', artist: 'brian', artistName: 'Brian', style: 'color', showcase: true, tags: ['show-carousel'] },
   { src: 'assets/images/Artist-Brian/Brian_Floral_Color.jpg', alt: 'Floral color tattoo by Brian', artist: 'brian', artistName: 'Brian', style: 'color' },
+  { src: 'assets/images/Artist-Danny/Danny_IMG01.jpg', alt: 'Ornamental forearm tattoo by Danny', artist: 'danny', artistName: 'Danny', style: 'geometric' },
+  { src: 'assets/images/Artist-Danny/Danny_IMG02.jpg', alt: 'Floral hand tattoo by Danny', artist: 'danny', artistName: 'Danny', style: 'black-grey', styleTags: ['geometric'] },
+  { src: 'assets/images/Artist-Danny/Danny_IMG03.jpg', alt: 'Snake wrist tattoo by Danny', artist: 'danny', artistName: 'Danny', style: 'traditional' },
+  { src: 'assets/images/Artist-Danny/Danny_IMG04.jpg', alt: 'Skull forearm tattoo by Danny', artist: 'danny', artistName: 'Danny', style: 'black-grey' },
+  { src: 'assets/images/Artist-Danny/Danny_IMG05.jpg', alt: 'Theater mask tattoo by Danny', artist: 'danny', artistName: 'Danny', style: 'black-grey', showcase: true },
+  { src: 'assets/images/Artist-Danny/Danny_IMG06.jpg', alt: 'Black and grey hand tattoo by Danny', artist: 'danny', artistName: 'Danny', style: 'black-grey', styleTags: ['geometric'], tags: ['show-homepage', 'show-carousel'] },
+  { src: 'assets/images/Artist-Danny/Danny_IMG07.jpg', alt: 'Lily flower tattoo by Danny', artist: 'danny', artistName: 'Danny', style: 'black-grey' },
+  { src: 'assets/images/Artist-Danny/Danny_IMG08.jpg', alt: 'Dagger tattoo by Danny', artist: 'danny', artistName: 'Danny', style: 'traditional' },
+  { src: 'assets/images/Artist-Danny/Danny_IMG09.jpg', alt: 'Butterfly tattoo by Danny', artist: 'danny', artistName: 'Danny', style: 'black-grey', tags: ['show-carousel'] },
+  { src: 'assets/images/Artist-Danny/Danny_IMG10.jpg', alt: 'Cross memorial tattoo by Danny', artist: 'danny', artistName: 'Danny', style: 'black-grey' },
+  { src: 'assets/images/Artist-Danny/Danny_IMG11.jpg', alt: 'Color rose tattoo by Danny', artist: 'danny', artistName: 'Danny', style: 'color', styleTags: ['traditional'] },
+  { src: 'assets/images/Artist-Danny/Danny_IMG12.jpg', alt: 'Color character tattoo by Danny', artist: 'danny', artistName: 'Danny', style: 'color' },
+  { src: 'assets/images/Artist-Danny/Danny_IMG13.jpg', alt: 'Color floral figure tattoo by Danny', artist: 'danny', artistName: 'Danny', style: 'color', showcase: true, tags: ['show-homepage', 'show-carousel'] },
+  { src: 'assets/images/Artist-Danny/Danny_IMG14.jpg', alt: 'Color forearm tattoo by Danny', artist: 'danny', artistName: 'Danny', style: 'color' },
+  { src: 'assets/images/Artist-Danny/Danny_IMG15.jpg', alt: 'Branch tattoo by Danny', artist: 'danny', artistName: 'Danny', style: 'black-grey', tags: ['show-carousel'] },
+  { src: 'assets/images/Artist-Danny/Danny_IMG16.jpg', alt: 'Shamrock tattoo by Danny', artist: 'danny', artistName: 'Danny', style: 'color' },
+  { src: 'assets/images/Artist-Danny/Danny_IMG17.jpg', alt: 'Anchor tattoo by Danny', artist: 'danny', artistName: 'Danny', style: 'traditional' },
+  { src: 'assets/images/Artist-Danny/Danny_IMG18.jpg', alt: 'Color skull tattoo by Danny', artist: 'danny', artistName: 'Danny', style: 'color', showcase: true, tags: ['show-carousel'] },
+  { src: 'assets/images/Artist-Danny/Danny_IMG19.jpg', alt: 'Anchor and flowers tattoo by Danny', artist: 'danny', artistName: 'Danny', style: 'color', styleTags: ['traditional'] },
+  { src: 'assets/images/Artist-Danny/Danny_IMG20.jpg', alt: 'Color floral tattoo by Danny', artist: 'danny', artistName: 'Danny', style: 'color', showcase: true, tags: ['show-carousel'] },
 ];
 
 function hasGalleryTag(img, tag) {
   return Array.isArray(img.tags) && img.tags.indexOf(tag) !== -1;
+}
+
+function hasStyleTag(img, style) {
+  return Array.isArray(img.styleTags) && img.styleTags.indexOf(style) !== -1;
+}
+
+function imageMatchesStyle(img, style) {
+  return img.style === style || hasStyleTag(img, style);
 }
 
 function getGalleryThumbnailSrc(src) {
@@ -151,9 +180,17 @@ function getGalleryImagesByTag(tag) {
 function getGalleryStyles() {
   var styles = [];
 
+  function addStyle(style) {
+    if (style && styles.indexOf(style) === -1) {
+      styles.push(style);
+    }
+  }
+
   galleryImages.forEach(function (img) {
-    if (img.style && styles.indexOf(img.style) === -1) {
-      styles.push(img.style);
+    addStyle(img.style);
+
+    if (Array.isArray(img.styleTags)) {
+      img.styleTags.forEach(addStyle);
     }
   });
 
@@ -165,7 +202,12 @@ function getGalleryStyles() {
 }
 
 function getHomepageGalleryImages() {
-  return getBalancedGalleryImagesByArtist(shuffleGalleryImages(getGalleryImagesByTag('show-homepage'))).slice(0, 6);
+  var homepageImages = shuffleGalleryImages(getGalleryImagesByTag('show-homepage'));
+  var homepageArtistCount = artistDisplayOrder.filter(function (artist) {
+    return homepageImages.some(function (img) { return img.artist === artist; });
+  }).length;
+  var targetCount = Math.max(9, homepageArtistCount * 2);
+  return getBalancedGalleryImagesByArtist(homepageImages).slice(0, targetCount);
 }
 
 function getBalancedGalleryImagesByArtist(images) {

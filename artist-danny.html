@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gallery | Rockstar Tattoo — Exquisite Ink &amp; Body Art</title>
-  <meta name="description" content="Browse tattoo work by Rockstar Tattoo artists in Las Vegas.">
-  <meta property="og:title" content="Gallery | Rockstar Tattoo">
-  <meta property="og:description" content="Browse tattoo work by Rockstar Tattoo artists.">
+  <title>Danny's Gallery | Rockstar Tattoo — Custom Tattoo & Piercing Artist</title>
+  <meta name="description" content="Browse Danny Kope's tattoo portfolio — custom artwork, traditional tattooing, permanent cosmetics, and Master Piercer experience at Rockstar Tattoo in Las Vegas.">
+  <meta property="og:title" content="Danny's Gallery | Rockstar Tattoo">
+  <meta property="og:description" content="Browse Danny's tattoo portfolio — custom artwork, traditional tattooing, and professional piercing experience.">
   <meta property="og:image" content="assets/images/rockstar-logo.jpg">
   <meta property="og:type" content="website">
   <link rel="icon" href="favicon.ico" sizes="any">
@@ -34,8 +34,8 @@
     </a>
     <nav class="header-nav" aria-label="Main navigation">
       <a href="index.html">Home</a>
-      <a href="gallery.html" class="active">Gallery</a>
-      <a href="artists.html">Artists</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="artists.html" class="active">Artists</a>
       <div class="nav-item-dropdown">
         <a href="aftercare.html?type=tattoo" class="nav-dropdown-toggle" id="aftercare-header-toggle" aria-expanded="false" aria-controls="aftercare-header-menu">
           Aftercare
@@ -66,8 +66,8 @@
     <button class="nav-close" id="nav-close" aria-label="Close navigation menu">&#x2715;</button>
     <nav aria-label="Mobile navigation">
       <a href="index.html">Home</a>
-      <a href="gallery.html" class="active">Gallery</a>
-      <a href="artists.html">Artists</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="artists.html" class="active">Artists</a>
       <div class="nav-item-dropdown">
         <button type="button" class="nav-dropdown-toggle" id="aftercare-mobile-toggle" aria-expanded="false" aria-controls="aftercare-mobile-menu">
           Aftercare
@@ -84,26 +84,53 @@
 
 
   <!-- Main Content -->
-  <main class="gallery-page">
-    <h1>Our Work</h1>
-
-    <!-- Filter Bar -->
-    <div class="filter-bar artist-filter-bar" role="group" aria-label="Filter by artist" data-gallery-artist-filters>
-      <button class="filter-btn artist-filter-btn active" data-artist="all" aria-pressed="true">All</button>
-      <button class="filter-btn artist-filter-btn" data-artist="brian" aria-pressed="false">Brian</button>
-      <button class="filter-btn artist-filter-btn" data-artist="martin" aria-pressed="false">Martin</button>
-      <button class="filter-btn artist-filter-btn" data-artist="tempt" aria-pressed="false">Tempt</button>
-      <button class="filter-btn artist-filter-btn" data-artist="danny" aria-pressed="false">Danny</button>
-    </div>
-    <div class="filter-bar style-filter-bar" role="group" aria-label="Filter by style" data-gallery-style-filters></div>
-
-    <div class="gallery-filter-status" aria-live="polite">
-      <p id="gallery-filter-summary">Showing all artwork</p>
-      <button type="button" class="btn-secondary" id="gallery-clear-filters" hidden>Clear Filters</button>
+  <main class="gallery-page artist-detail-page" data-artist-name="Danny">
+    <div class="artist-sticky-controls-shell" data-artist-sticky-shell>
+      <div class="artist-sticky-controls" data-artist-sticky-controls>
+        <a href="artists.html" class="btn-secondary artist-back-link" aria-label="Back to Artists">
+          <span class="artist-back-full">Back to Artists</span>
+          <span class="artist-back-compact" aria-hidden="true">&lt; Back</span>
+        </a>
+        <span class="artist-sticky-separator" aria-hidden="true">|</span>
+        <span class="artist-sticky-name" data-artist-sticky-name>Danny</span>
+      </div>
     </div>
 
-    <!-- Photo Grid (populated by gallery.js) -->
-    <div class="gallery-grid" id="gallery-grid" aria-label="Tattoo gallery"></div>
+    <section class="artist-profile">
+      <div class="artist-profile-copy">
+        <span class="eyebrow">Artist Profile</span>
+        <h1>Danny's Portfolio</h1>
+        <p class="artist-known-for">Known for: custom artwork, traditional work, permanent cosmetics, professional piercing, and client-focused care.</p>
+        <div class="artist-full-bio" id="danny-bio" aria-label="Danny artist bio" data-artist-bio>
+          <p>With over 25 years of professional tattooing experience, Danny Kope has built a reputation for delivering high-quality custom artwork, precision, and professionalism. As a Health Department Certified Tattoo Artist, Permanent Cosmetics Tattoo Artist, and Master Piercer, Danny is dedicated to maintaining the highest standards of safety, cleanliness, and client care while creating exceptional body art.</p>
+          <div class="artist-bio-extra" data-artist-bio-extra>
+            <p>Throughout his career, Danny has worked with clients from all walks of life, helping them bring their ideas to life through custom tattoos that are both meaningful and visually striking. His extensive experience and commitment to his craft have earned him a loyal clientele and respect within the tattoo industry.</p>
+            <p>For the past three and a half years, Danny has been a valued member of Diversity Tattoo and its sister company, Rockstar Tattoo, where he continues to showcase his artistic talent and passion for the industry. Whether creating intricate custom designs, bold traditional work, or detailed piercings, Danny approaches every project with creativity, precision, and a dedication to excellence.</p>
+            <p>When you sit in Danny's chair, you're not just getting a tattoo or piercing. You're working with a seasoned professional who has spent more than two decades perfecting his craft and helping clients wear their stories with pride.</p>
+          </div>
+        </div>
+        <button type="button" class="btn-secondary artist-bio-toggle" aria-expanded="false" aria-controls="danny-bio" data-artist-bio-toggle>Click to expand</button>
+        <ul class="tag-list" aria-label="Danny specialties">
+          <li class="tag-pill">Custom Artwork</li>
+          <li class="tag-pill">Traditional</li>
+          <li class="tag-pill">Piercing</li>
+          <li class="tag-pill">Permanent Cosmetics</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="artist-portfolio-section" aria-label="Danny portfolio gallery">
+      <div class="gallery-grid" id="gallery-grid" aria-label="Danny's tattoo portfolio"></div>
+    </section>
+
+    <section class="artist-conversion-panel" aria-label="Danny consultation actions">
+      <h2>Ask About Custom Work Or Piercing</h2>
+      <p>Call the shop to talk through your idea, placement, sizing, and whether Danny is the right fit for your piece.</p>
+      <div class="action-row">
+        <a href="tel:7027499914" class="btn-primary">Call (702) 749-9914</a>
+        <a href="contact.html" class="btn-secondary">Contact The Shop</a>
+      </div>
+    </section>
   </main>
   <!-- Footer -->
   <footer class="site-footer">
@@ -139,10 +166,10 @@
   <!-- JS -->
   <script src="js/promos.js?v=promo-index-1"></script>
   <script src="js/nav.js?v=cleanup-1"></script>
+  <script src="js/countdown.js?v=cleanup-1"></script>
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
   <script src="js/gallery-data.js?v=martin-library-1"></script>
-  <script src="js/gallery.js?v=martin-library-1"></script>
-  <script src="js/countdown.js?v=cleanup-1"></script>
+  <script src="js/artist-danny.js?v=danny-profile-1"></script>
   <script src="js/reveal.js?v=aftercare-reveal-1"></script>
 </body>
 </html>
