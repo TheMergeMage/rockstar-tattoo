@@ -1,17 +1,19 @@
 /* gallery-data.js - shared tattoo gallery image source */
 
-var artistDisplayOrder = ['tempt', 'brian', 'martin', 'danny'];
+var artistDisplayOrder = ['tempt', 'brian', 'martin', 'danny', 'sheylla'];
 
 var artistDisplayNames = {
   brian: 'Brian',
   danny: 'Danny',
   martin: 'Martin',
+  sheylla: 'Sheylla',
   tempt: 'Tempt',
 };
 
 var styleDisplayNames = {
   'black-grey': 'Black & Grey',
   color: 'Color',
+  'fine-line': 'Fine Line',
   geometric: 'Geometric',
   realism: 'Realism',
   script: 'Script',
@@ -21,9 +23,9 @@ var styleDisplayNames = {
 var galleryImages = [
   { src: 'assets/images/Artist-Tempt/Tempt_Hummingbird_before-and-after.jpg', alt: 'Hummingbird tattoo by Tempt', artist: 'tempt', artistName: 'Tempt', style: 'realism', tags: ['show-carousel'] },
   { src: 'assets/images/Artist-Tempt/Tempt_Daisy_Anchor.jpg', alt: 'Daisy anchor tattoo by Tempt', artist: 'tempt', artistName: 'Tempt', style: 'traditional', showcase: true, tags: ['show-carousel'] },
-  { src: 'assets/images/Artist-Tempt/Tempt_Aries.jpg', alt: 'Aries zodiac tattoo by Tempt', artist: 'tempt', artistName: 'Tempt', style: 'geometric' },
-  { src: 'assets/images/Artist-Tempt/Tempt_Skulls.jpg', alt: 'Skulls tattoo by Tempt', artist: 'tempt', artistName: 'Tempt', style: 'black-grey' },
-  { src: 'assets/images/Artist-Tempt/Tempt_Colored_Garden.jpg', alt: 'Colored garden tattoo by Tempt', artist: 'tempt', artistName: 'Tempt', style: 'color' },
+  { src: 'assets/images/Artist-Tempt/Tempt_Aries.jpg', alt: 'Aries zodiac tattoo by Tempt', artist: 'tempt', artistName: 'Tempt', style: 'geometric', tags: ['show-carousel'] },
+  { src: 'assets/images/Artist-Tempt/Tempt_Skulls.jpg', alt: 'Skulls tattoo by Tempt', artist: 'tempt', artistName: 'Tempt', style: 'black-grey', tags: ['show-carousel'] },
+  { src: 'assets/images/Artist-Tempt/Tempt_Colored_Garden.jpg', alt: 'Colored garden tattoo by Tempt', artist: 'tempt', artistName: 'Tempt', style: 'color', tags: ['show-carousel'] },
   { src: 'assets/images/Artist-Tempt/Tempt_Peonies.jpg', alt: 'Peonies tattoo by Tempt', artist: 'tempt', artistName: 'Tempt', style: 'color', tags: ['show-homepage', 'show-carousel'] },
   { src: 'assets/images/Artist-Tempt/Tempt_Koi.jpg', alt: 'Koi fish tattoo by Tempt', artist: 'tempt', artistName: 'Tempt', style: 'traditional', tags: ['show-homepage', 'show-carousel'] },
   { src: 'assets/images/Artist-Tempt/Tempt_Snake_Sleeve.jpg', alt: 'Snake sleeve tattoo by Tempt', artist: 'tempt', artistName: 'Tempt', style: 'black-grey', styleTags: ['traditional'] },
@@ -137,6 +139,32 @@ var galleryImages = [
   { src: 'assets/images/Artist-Danny/Danny_IMG18.jpg', alt: 'Color skull tattoo by Danny', artist: 'danny', artistName: 'Danny', style: 'color', showcase: true, tags: ['show-carousel'] },
   { src: 'assets/images/Artist-Danny/Danny_IMG19.jpg', alt: 'Anchor and flowers tattoo by Danny', artist: 'danny', artistName: 'Danny', style: 'color', styleTags: ['traditional'] },
   { src: 'assets/images/Artist-Danny/Danny_IMG20.jpg', alt: 'Color floral tattoo by Danny', artist: 'danny', artistName: 'Danny', style: 'color', showcase: true, tags: ['show-carousel'] },
+  { src: 'assets/images/Artist-Sheylla/Sheylla_IMG_5521.jpg', alt: 'Symmetrical black and grey celestial back tattoo by Sheylla', artist: 'sheylla', artistName: 'Sheylla', style: 'black-grey', styleTags: ['fine-line', 'geometric'], showcase: true, tags: ['show-homepage'] },
+  { src: 'assets/images/Artist-Sheylla/Sheylla_IMG_7130.jpg', alt: 'Color phoenix, woman, and rose forearm tattoo by Sheylla', artist: 'sheylla', artistName: 'Sheylla', style: 'color', tags: ['show-carousel'] },
+  { src: 'assets/images/Artist-Sheylla/Sheylla_IMG_5323.jpg', alt: 'Red fine-line rose and foliage foot tattoo by Sheylla', artist: 'sheylla', artistName: 'Sheylla', style: 'fine-line', styleTags: ['color'], tags: ['show-carousel'] },
+  { src: 'assets/images/Artist-Sheylla/Sheylla_IMG_0415.jpg', alt: 'Abstract fine-line sun, stars, and wave shoulder tattoo by Sheylla', artist: 'sheylla', artistName: 'Sheylla', style: 'fine-line', styleTags: ['geometric'], tags: ['show-carousel'] },
+  { src: 'assets/images/Artist-Sheylla/Sheylla_IMG_0395.jpg', alt: 'Black and grey Tupac portrait forearm tattoo by Sheylla', artist: 'sheylla', artistName: 'Sheylla', style: 'realism', styleTags: ['black-grey'], showcase: true, tags: ['show-homepage', 'show-carousel'] },
+  { src: 'assets/images/Artist-Sheylla/Sheylla_22273158-c555-423d-8c66-6423ab580fb6.jpg', alt: 'Fine-line script and crescent moon tattoo by Sheylla', artist: 'sheylla', artistName: 'Sheylla', style: 'script', styleTags: ['fine-line'] },
+  { src: 'assets/images/Artist-Sheylla/Sheylla_6BA6349F-0D70-4546-B29D-D7670EE5F3F8.jpg', alt: 'Color transgender pride heart tattoo by Sheylla', artist: 'sheylla', artistName: 'Sheylla', style: 'color', styleTags: ['fine-line'] },
+  { src: 'assets/images/Artist-Sheylla/Sheylla_8f060631-1734-4c62-9f85-af1acdfa8574.jpg', alt: 'Fine-line bow and arrow leg tattoo by Sheylla', artist: 'sheylla', artistName: 'Sheylla', style: 'fine-line', styleTags: ['geometric'] },
+  { src: 'assets/images/Artist-Sheylla/Sheylla_BE77792D-9D65-4F4A-BF28-77FA04D50ADB.jpg', alt: 'Small outline heart wrist tattoo by Sheylla', artist: 'sheylla', artistName: 'Sheylla', style: 'fine-line' },
+  { src: 'assets/images/Artist-Sheylla/Sheylla_IMG_1515.jpg', alt: 'Abstract crescent moon and stars back tattoo by Sheylla', artist: 'sheylla', artistName: 'Sheylla', style: 'fine-line', styleTags: ['geometric'] },
+  { src: 'assets/images/Artist-Sheylla/Sheylla_IMG_1524.jpg', alt: 'Small fine-line butterfly arm tattoo by Sheylla', artist: 'sheylla', artistName: 'Sheylla', style: 'fine-line' },
+  { src: 'assets/images/Artist-Sheylla/Sheylla_IMG_5859.jpg', alt: 'Small black and grey cherry tattoo by Sheylla', artist: 'sheylla', artistName: 'Sheylla', style: 'fine-line', styleTags: ['black-grey'] },
+  { src: 'assets/images/Artist-Sheylla/Sheylla_IMG_6749.jpg', alt: 'Black and grey money bag tattoo by Sheylla', artist: 'sheylla', artistName: 'Sheylla', style: 'black-grey' },
+  { src: 'assets/images/Artist-Sheylla/Sheylla_IMG_7229.jpg', alt: 'Small red fine-line giraffe tattoo by Sheylla', artist: 'sheylla', artistName: 'Sheylla', style: 'fine-line', styleTags: ['color'] },
+  { src: 'assets/images/Artist-Sheylla/Sheylla_IMG_7522.jpg', alt: 'Small red outline heart tattoo by Sheylla', artist: 'sheylla', artistName: 'Sheylla', style: 'fine-line', styleTags: ['color'] },
+  { src: 'assets/images/Artist-Sheylla/Sheylla_IMG_7588.jpg', alt: 'Black and grey alien character arm tattoo by Sheylla', artist: 'sheylla', artistName: 'Sheylla', style: 'black-grey', styleTags: ['traditional'] },
+  { src: 'assets/images/Artist-Sheylla/Sheylla_IMG_7591.jpg', alt: 'Fine-line floral memorial script tattoo by Sheylla', artist: 'sheylla', artistName: 'Sheylla', style: 'script', styleTags: ['fine-line', 'black-grey'] },
+  { src: 'assets/images/Artist-Sheylla/Sheylla_IMG_7610.jpg', alt: 'Black and grey eye and hands ankle tattoo by Sheylla', artist: 'sheylla', artistName: 'Sheylla', style: 'black-grey', styleTags: ['fine-line'] },
+  { src: 'assets/images/Artist-Sheylla/Sheylla_IMG_7651.jpg', alt: 'Blue flaming skull tattoo by Sheylla', artist: 'sheylla', artistName: 'Sheylla', style: 'color', styleTags: ['traditional'] },
+  { src: 'assets/images/Artist-Sheylla/Sheylla_IMG_7737.jpg', alt: 'Fine-line Vale script tattoo by Sheylla', artist: 'sheylla', artistName: 'Sheylla', style: 'script', styleTags: ['fine-line'] },
+  { src: 'assets/images/Artist-Sheylla/Sheylla_IMG_7878.jpg', alt: 'Small red ladybug tattoo by Sheylla', artist: 'sheylla', artistName: 'Sheylla', style: 'color', styleTags: ['fine-line'] },
+  { src: 'assets/images/Artist-Sheylla/Sheylla_IMG_7920.jpg', alt: 'Small ace of hearts tattoo by Sheylla', artist: 'sheylla', artistName: 'Sheylla', style: 'fine-line' },
+  { src: 'assets/images/Artist-Sheylla/Sheylla_IMG_7948.jpg', alt: 'Black and grey rose hand tattoo by Sheylla', artist: 'sheylla', artistName: 'Sheylla', style: 'black-grey', styleTags: ['traditional'] },
+  { src: 'assets/images/Artist-Sheylla/Sheylla_IMG_8073.jpg', alt: 'Black and grey geometric portrait forearm tattoo by Sheylla', artist: 'sheylla', artistName: 'Sheylla', style: 'black-grey', styleTags: ['geometric', 'realism'] },
+  { src: 'assets/images/Artist-Sheylla/Sheylla_IMG_8444.jpg', alt: 'Fine-line bow and arrow forearm tattoo by Sheylla', artist: 'sheylla', artistName: 'Sheylla', style: 'fine-line', styleTags: ['geometric'] },
+  { src: 'assets/images/Artist-Sheylla/Sheylla_IMG_8917.jpg', alt: 'Fine-line instinct quote collarbone tattoo by Sheylla', artist: 'sheylla', artistName: 'Sheylla', style: 'script', styleTags: ['fine-line'] },
 ];
 
 function hasGalleryTag(img, tag) {

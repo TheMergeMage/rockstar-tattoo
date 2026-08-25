@@ -25,7 +25,19 @@
 
 @media (min-width: 1024px) {
   .artists-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .artist-card {
+    grid-column: span 2;
+  }
+
+  .artist-card:nth-last-child(2):nth-child(3n + 1) {
+    grid-column: 2 / span 2;
+  }
+
+  .artist-card:last-child:nth-child(3n + 2) {
+    grid-column: 4 / span 2;
   }
 }
 
@@ -130,5 +142,13 @@
 @media (max-width: 767px) {
   .artists-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .artist-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc(50% - (var(--space-md) / 2));
   }
 }
