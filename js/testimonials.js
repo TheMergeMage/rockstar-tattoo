@@ -60,6 +60,28 @@
     if (!track) return;
 
     var cards = Array.prototype.slice.call(track.querySelectorAll('.testimonial-card'));
+
+    // Keep the source review set unique before the continuous ribbon clones it.
+    // Matching quote + reviewer name catches accidental re-imports without
+    // changing the visible text of any canonical review.
+    var seenReviews = {};
+    cards = cards.filter(function (card) {
+      var quote = card.querySelector('.testimonial-quote');
+      var name = card.querySelector('.testimonial-name');
+      var normalize = function (value) {
+        return (value || '').replace(/\s+/g, ' ').trim().toLowerCase();
+      };
+      var reviewKey = normalize(quote && quote.textContent) + '|' + normalize(name && name.textContent);
+
+      if (seenReviews[reviewKey]) {
+        card.remove();
+        return false;
+      }
+
+      seenReviews[reviewKey] = true;
+      return true;
+    });
+
     if (cards.length < 2) return;
 
     var controls = document.querySelector('.testimonials-controls');
