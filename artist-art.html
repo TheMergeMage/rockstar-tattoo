@@ -3,18 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gallery | Rockstar Tattoo — Exquisite Ink &amp; Body Art</title>
-  <meta name="description" content="Browse tattoo work by Rockstar Tattoo artists in Las Vegas.">
-  <meta property="og:title" content="Gallery | Rockstar Tattoo">
-  <meta property="og:description" content="Browse tattoo work by Rockstar Tattoo artists.">
+  <title>Art's Gallery | Rockstar Tattoo — Custom Tattoo Artist</title>
+  <meta name="description" content="Meet Art and browse his custom tattoo portfolio at Rockstar Tattoo in Las Vegas.">
+  <meta property="og:title" content="Art's Gallery | Rockstar Tattoo">
+  <meta property="og:description" content="Browse custom tattoo work by Art at Rockstar Tattoo.">
   <meta property="og:image" content="assets/images/rockstar-logo.jpg">
   <meta property="og:type" content="website">
   <link rel="icon" href="favicon.ico" sizes="any">
 
-  <!-- GLightbox CDN -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
-
-  <!-- Site CSS -->
   <link rel="stylesheet" href="css/variables.css?v=logo-jpg-1">
   <link rel="stylesheet" href="css/reset.css?v=layout-refine-1">
   <link rel="stylesheet" href="css/typography.css?v=tag-hide-1">
@@ -24,22 +21,18 @@
   <link rel="stylesheet" href="css/gallery.css?v=gallery-cleanup-1">
 </head>
 <body>
-
-  <!-- Promo Bar -->
   <div class="promo-bar" role="banner" aria-label="Promotion announcement"></div>
-  <!-- Sticky Header -->
+
   <header class="site-header">
     <a href="index.html">
       <img src="assets/images/rockstar-logo.jpg" alt="Rockstar Tattoo" class="header-logo" width="1905" height="1534">
     </a>
     <nav class="header-nav" aria-label="Main navigation">
       <a href="index.html">Home</a>
-      <a href="gallery.html" class="active">Gallery</a>
-      <a href="artists.html">Artists</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="artists.html" class="active">Artists</a>
       <div class="nav-item-dropdown">
-        <a href="aftercare.html?type=tattoo" class="nav-dropdown-toggle" id="aftercare-header-toggle" aria-expanded="false" aria-controls="aftercare-header-menu">
-          Aftercare
-        </a>
+        <a href="aftercare.html?type=tattoo" class="nav-dropdown-toggle" id="aftercare-header-toggle" aria-expanded="false" aria-controls="aftercare-header-menu">Aftercare</a>
         <div class="nav-dropdown-menu" id="aftercare-header-menu" aria-label="Aftercare submenu">
           <a href="aftercare.html?type=tattoo">Tattoo Aftercare</a>
           <a href="aftercare.html?type=piercing">Piercing Aftercare</a>
@@ -52,26 +45,24 @@
       <a class="header-social-link" href="https://www.instagram.com/rckstrta2/" target="_blank" rel="noopener" aria-label="Instagram">
         <svg class="social-icon social-icon-instagram" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
           <rect x="3" y="3" width="18" height="18" rx="5" ry="5"></rect>
-              <circle cx="12" cy="12" r="4"></circle>
-              <circle cx="17.5" cy="6.5" r="1.2"></circle>
-            </svg>
+          <circle cx="12" cy="12" r="4"></circle>
+          <circle cx="17.5" cy="6.5" r="1.2"></circle>
+        </svg>
       </a>
       <button class="hamburger" id="hamburger" aria-expanded="false" aria-label="Open navigation menu" aria-controls="nav-overlay">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
-  <!-- Mobile Nav Overlay -->
+
   <div class="nav-overlay" id="nav-overlay" role="dialog" aria-label="Navigation menu" aria-hidden="true">
     <button class="nav-close" id="nav-close" aria-label="Close navigation menu">&#x2715;</button>
     <nav aria-label="Mobile navigation">
       <a href="index.html">Home</a>
-      <a href="gallery.html" class="active">Gallery</a>
-      <a href="artists.html">Artists</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="artists.html" class="active">Artists</a>
       <div class="nav-item-dropdown">
-        <button type="button" class="nav-dropdown-toggle" id="aftercare-mobile-toggle" aria-expanded="false" aria-controls="aftercare-mobile-menu">
-          Aftercare
-        </button>
+        <button type="button" class="nav-dropdown-toggle" id="aftercare-mobile-toggle" aria-expanded="false" aria-controls="aftercare-mobile-menu">Aftercare</button>
         <div class="nav-dropdown-menu" id="aftercare-mobile-menu" aria-label="Aftercare submenu">
           <a href="aftercare.html?type=tattoo">Tattoo Aftercare</a>
           <a href="aftercare.html?type=piercing">Piercing Aftercare</a>
@@ -82,30 +73,54 @@
     </nav>
   </div>
 
-
-  <!-- Main Content -->
-  <main class="gallery-page">
-    <h1>Our Work</h1>
-
-    <!-- Filter Bar -->
-    <div class="filter-bar artist-filter-bar" role="group" aria-label="Filter by artist" data-gallery-artist-filters>
-      <button class="filter-btn artist-filter-btn active" data-artist="all" aria-pressed="true">All</button>
-      <button class="filter-btn artist-filter-btn" data-artist="brian" aria-pressed="false">Brian</button>
-      <button class="filter-btn artist-filter-btn" data-artist="martin" aria-pressed="false">Martin</button>
-      <button class="filter-btn artist-filter-btn" data-artist="tempt" aria-pressed="false">Tempt</button>
-      <button class="filter-btn artist-filter-btn" data-artist="danny" aria-pressed="false">Danny</button>
-    </div>
-    <div class="filter-bar style-filter-bar" role="group" aria-label="Filter by style" data-gallery-style-filters></div>
-
-    <div class="gallery-filter-status" aria-live="polite">
-      <p id="gallery-filter-summary">Showing all artwork</p>
-      <button type="button" class="btn-secondary" id="gallery-clear-filters" hidden>Clear Filters</button>
+  <main class="gallery-page artist-detail-page" data-artist-name="Art">
+    <div class="artist-sticky-controls-shell" data-artist-sticky-shell>
+      <div class="artist-sticky-controls" data-artist-sticky-controls>
+        <a href="artists.html" class="btn-secondary artist-back-link" aria-label="Back to Artists">
+          <span class="artist-back-full">Back to Artists</span>
+          <span class="artist-back-compact" aria-hidden="true">&lt; Back</span>
+        </a>
+        <span class="artist-sticky-separator" aria-hidden="true">|</span>
+        <span class="artist-sticky-name" data-artist-sticky-name>Art</span>
+      </div>
     </div>
 
-    <!-- Photo Grid (populated by gallery.js) -->
-    <div class="gallery-grid" id="gallery-grid" aria-label="Tattoo gallery"></div>
+    <section class="artist-profile">
+      <div class="artist-profile-copy">
+        <span class="eyebrow">Artist Profile</span>
+        <h1>Art's Portfolio</h1>
+        <p class="artist-known-for">Known for: custom tattooing shaped around each client's unique vision.</p>
+        <div class="artist-full-bio" id="art-bio" aria-label="Art artist bio" data-artist-bio>
+          <p>Hi I'm Arturo Ramirez, but you can call me Art. I believe a great tattoo should be as unique as the person wearing it. With over 20 years of tattooing experience, I take pride in creating custom pieces that combine creativity, precision, and lasting quality, whether you’re bringing a fully developed idea or just the start of a vision. My goal is to make every client feel comfortable, heard, and excited throughout the process while delivering artwork they’ll be proud to wear for a lifetime. Take a look through my portfolio, and when you’re ready to bring your next tattoo to life, ask for Art.</p>
+        </div>
+        <ul class="tag-list" aria-label="Art specialties">
+          <li class="tag-pill">Custom Tattooing</li>
+          <li class="tag-pill">Fine Line</li>
+          <li class="tag-pill">Abstract</li>
+          <li class="tag-pill">Black &amp; Grey</li>
+          <li class="tag-pill">Color</li>
+          <li class="tag-pill">Realism</li>
+          <li class="tag-pill">Script</li>
+          <li class="tag-pill">Geometric</li>
+          <li class="tag-pill">Traditional</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="artist-portfolio-section" aria-label="Art portfolio gallery">
+      <div class="gallery-grid" id="gallery-grid" aria-label="Art's tattoo portfolio"></div>
+    </section>
+
+    <section class="artist-conversion-panel" aria-label="Art consultation actions">
+      <h2>Ask About Similar Work</h2>
+      <p>Call the shop, bring a reference, or stop by to talk through placement, scale, and your custom tattoo vision.</p>
+      <div class="action-row">
+        <a href="tel:7027499914" class="btn-primary">Call (702) 749-9914</a>
+        <a href="contact.html" class="btn-secondary">Contact The Shop</a>
+      </div>
+    </section>
   </main>
-  <!-- Footer -->
+
   <footer class="site-footer">
     <div class="footer-inner">
       <a href="index.html">
@@ -136,13 +151,12 @@
     <p class="footer-copyright">&copy; <span id="footer-year"></span> Rockstar Tattoo. All rights reserved.</p>
   </footer>
 
-  <!-- JS -->
   <script src="js/promos.js?v=promo-index-1"></script>
   <script src="js/nav.js?v=cleanup-1"></script>
+  <script src="js/countdown.js?v=cleanup-1"></script>
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
   <script src="js/gallery-data.js?v=art-portfolio-1"></script>
-  <script src="js/gallery.js?v=martin-library-1"></script>
-  <script src="js/countdown.js?v=cleanup-1"></script>
+  <script src="js/artist-art.js?v=art-portfolio-1"></script>
   <script src="js/reveal.js?v=aftercare-reveal-1"></script>
 </body>
 </html>

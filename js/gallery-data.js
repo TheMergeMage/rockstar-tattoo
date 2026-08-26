@@ -1,8 +1,9 @@
 /* gallery-data.js - shared tattoo gallery image source */
 
-var artistDisplayOrder = ['tempt', 'brian', 'martin', 'danny', 'sheylla'];
+var artistDisplayOrder = ['tempt', 'brian', 'martin', 'danny', 'art', 'sheylla'];
 
 var artistDisplayNames = {
+  art: 'Art',
   brian: 'Brian',
   danny: 'Danny',
   martin: 'Martin',
@@ -139,6 +140,37 @@ var galleryImages = [
   { src: 'assets/images/Artist-Danny/Danny_IMG18.jpg', alt: 'Color skull tattoo by Danny', artist: 'danny', artistName: 'Danny', style: 'color', showcase: true, tags: ['show-carousel'] },
   { src: 'assets/images/Artist-Danny/Danny_IMG19.jpg', alt: 'Anchor and flowers tattoo by Danny', artist: 'danny', artistName: 'Danny', style: 'color', styleTags: ['traditional'] },
   { src: 'assets/images/Artist-Danny/Danny_IMG20.jpg', alt: 'Color floral tattoo by Danny', artist: 'danny', artistName: 'Danny', style: 'color', showcase: true, tags: ['show-carousel'] },
+  { src: 'assets/images/Artist-Art/Art_01_Architectural_Sleeve.jpg', alt: 'Black and grey architectural sleeve tattoo by Art', artist: 'art', artistName: 'Art', style: 'black-grey', styleTags: ['realism'] },
+  { src: 'assets/images/Artist-Art/Art_02_Blue_Robot.jpg', alt: 'Blue robot character tattoo by Art', artist: 'art', artistName: 'Art', style: 'color', styleTags: ['traditional'] },
+  { src: 'assets/images/Artist-Art/Art_03_Wolf_Portrait.jpg', alt: 'Black and grey wolf portrait tattoo by Art', artist: 'art', artistName: 'Art', style: 'black-grey', styleTags: ['realism'] },
+  { src: 'assets/images/Artist-Art/Art_04_Butterfly.jpg', alt: 'Black and grey butterfly tattoo by Art', artist: 'art', artistName: 'Art', style: 'black-grey' },
+  { src: 'assets/images/Artist-Art/Art_05_Frankenstein_Portrait.jpg', alt: 'Color Frankenstein portrait tattoo by Art', artist: 'art', artistName: 'Art', style: 'color', styleTags: ['realism'] },
+  { src: 'assets/images/Artist-Art/Art_06_Shaded_Portrait.jpg', alt: 'Shaded portrait tattoo by Art', artist: 'art', artistName: 'Art', style: 'black-grey', styleTags: ['realism'] },
+  { src: 'assets/images/Artist-Art/Art_07_Geometric_Chest_Piece.jpg', alt: 'Black and grey geometric chest tattoo by Art', artist: 'art', artistName: 'Art', style: 'geometric', styleTags: ['black-grey'], tags: ['show-carousel'] },
+  { src: 'assets/images/Artist-Art/Art_08_Native_Portrait.jpg', alt: 'Black and grey Native portrait tattoo by Art', artist: 'art', artistName: 'Art', style: 'realism', styleTags: ['black-grey'] },
+  { src: 'assets/images/Artist-Art/Art_09_Forearm_Script.jpg', alt: 'Script forearm tattoo by Art', artist: 'art', artistName: 'Art', style: 'script' },
+  { src: 'assets/images/Artist-Art/Art_10_Hand_Script.jpg', alt: 'Script hand tattoo by Art', artist: 'art', artistName: 'Art', style: 'script' },
+  { src: 'assets/images/Artist-Art/Art_11_Rose_Hand.jpg', alt: 'Black and grey rose hand tattoo by Art', artist: 'art', artistName: 'Art', style: 'black-grey', styleTags: ['traditional'] },
+  { src: 'assets/images/Artist-Art/Art_12_Screaming_Portrait.jpg', alt: 'Black and grey screaming face portrait tattoo by Art', artist: 'art', artistName: 'Art', style: 'realism', styleTags: ['black-grey'], tags: ['show-homepage'] },
+  { src: 'assets/images/Artist-Art/Art_13_Memorial_Script.jpg', alt: 'Memorial script chest tattoo by Art', artist: 'art', artistName: 'Art', style: 'script' },
+  { src: 'assets/images/Artist-Art/Art_14_Floral_Shoulder.jpg', alt: 'Floral shoulder tattoo by Art', artist: 'art', artistName: 'Art', style: 'color', styleTags: ['fine-line'] },
+  { src: 'assets/images/Artist-Art/Art_15_Fedora_Portrait.jpg', alt: 'Black and grey fedora portrait tattoo by Art', artist: 'art', artistName: 'Art', style: 'realism', styleTags: ['black-grey'] },
+  { src: 'assets/images/Artist-Art/Art_16_Color_Portrait.jpg', alt: 'Color portrait tattoo by Art', artist: 'art', artistName: 'Art', style: 'color', styleTags: ['realism'] },
+  { src: 'assets/images/Artist-Art/Art_17_Flamingo.jpg', alt: 'Small flamingo tattoo by Art', artist: 'art', artistName: 'Art', style: 'color' },
+  { src: 'assets/images/Artist-Art/Art_18_Name_Script.jpg', alt: 'Name script tattoo by Art', artist: 'art', artistName: 'Art', style: 'script' },
+  { src: 'assets/images/Artist-Art/Art_19_Memorial_Dice.jpg', alt: 'Memorial dice and lettering tattoo by Art', artist: 'art', artistName: 'Art', style: 'traditional', styleTags: ['script'] },
+  { src: 'assets/images/Artist-Art/Art_20_Cowboy_Portrait.jpg', alt: 'Black and grey cowboy portrait tattoo by Art', artist: 'art', artistName: 'Art', style: 'realism', styleTags: ['black-grey'] },
+  { src: 'assets/images/Artist-Art/Art_21_Floral_Skull.jpg', alt: 'Black and grey floral skull shoulder tattoo by Art', artist: 'art', artistName: 'Art', style: 'black-grey', styleTags: ['realism'], tags: ['show-carousel'] },
+  { src: 'assets/images/Artist-Art/Art_22_Black_Grey_Animal.jpg', alt: 'Black and grey animal tattoo by Art', artist: 'art', artistName: 'Art', style: 'black-grey', styleTags: ['realism'], tags: ['show-homepage'] },
+  { src: 'assets/images/Artist-Art/Art_23_USN_Lettering.jpg', alt: 'USN lettering tattoo by Art', artist: 'art', artistName: 'Art', style: 'script', styleTags: ['traditional'] },
+  { src: 'assets/images/Artist-Art/Art_24_Floral_Arm.jpg', alt: 'Black and grey floral arm tattoo by Art', artist: 'art', artistName: 'Art', style: 'black-grey', styleTags: ['fine-line'] },
+  { src: 'assets/images/Artist-Art/Art_25_Animal_Linework.jpg', alt: 'Black and grey animal linework tattoo by Art', artist: 'art', artistName: 'Art', style: 'fine-line', styleTags: ['black-grey'], tags: ['show-carousel'] },
+  { src: 'assets/images/Artist-Art/Art_26_Las_Vegas_Sign.jpg', alt: 'Las Vegas sign tattoo by Art', artist: 'art', artistName: 'Art', style: 'traditional', styleTags: ['script'] },
+  { src: 'assets/images/Artist-Art/Art_27_Egyptian_Portrait.jpg', alt: 'Black and grey Egyptian portrait tattoo by Art', artist: 'art', artistName: 'Art', style: 'realism', styleTags: ['black-grey'], showcase: true, tags: ['show-carousel'] },
+  { src: 'assets/images/Artist-Art/Art_28_Small_Floral.jpg', alt: 'Small floral tattoo by Art', artist: 'art', artistName: 'Art', style: 'fine-line', styleTags: ['color'] },
+  { src: 'assets/images/Artist-Art/Art_29_Screaming_Face.jpg', alt: 'Black and grey screaming face tattoo by Art', artist: 'art', artistName: 'Art', style: 'realism', styleTags: ['black-grey'] },
+  { src: 'assets/images/Artist-Art/Art_30_Welcome_Las_Vegas.jpg', alt: 'Welcome to Las Vegas tattoo by Art', artist: 'art', artistName: 'Art', style: 'traditional', styleTags: ['script'] },
+  { src: 'assets/images/Artist-Art/Art_31_Geometric_Arm.jpg', alt: 'Black and grey geometric arm tattoo by Art', artist: 'art', artistName: 'Art', style: 'geometric', styleTags: ['black-grey'] },
   { src: 'assets/images/Artist-Sheylla/Sheylla_IMG_5521.jpg', alt: 'Symmetrical black and grey celestial back tattoo by Sheylla', artist: 'sheylla', artistName: 'Sheylla', style: 'black-grey', styleTags: ['fine-line', 'geometric'], showcase: true, tags: ['show-homepage'] },
   { src: 'assets/images/Artist-Sheylla/Sheylla_IMG_7130.jpg', alt: 'Color phoenix, woman, and rose forearm tattoo by Sheylla', artist: 'sheylla', artistName: 'Sheylla', style: 'color', tags: ['show-carousel'] },
   { src: 'assets/images/Artist-Sheylla/Sheylla_IMG_5323.jpg', alt: 'Red fine-line rose and foliage foot tattoo by Sheylla', artist: 'sheylla', artistName: 'Sheylla', style: 'fine-line', styleTags: ['color'], tags: ['show-carousel'] },
@@ -300,11 +332,11 @@ function getNextCarouselPaddingImage(images, selectedSrcs) {
   }) || null;
 }
 
-function normalizeCarouselImageCount(images) {
+function normalizeCarouselImageCount(images, minimumCount) {
   var normalized = images.slice();
   var selectedSrcs = normalized.map(function (img) { return img.src; });
 
-  while (normalized.length % 4 !== 0) {
+  while (normalized.length < (minimumCount || 0) || normalized.length % 4 !== 0) {
     var nextImage = getNextCarouselPaddingImage(normalized, selectedSrcs);
     if (!nextImage) break;
 
@@ -317,7 +349,11 @@ function normalizeCarouselImageCount(images) {
 
 function getHomepageCarouselImages() {
   var carouselImages = getGalleryImagesByTag('show-carousel');
-  return normalizeCarouselImageCount(getBalancedGalleryImagesByArtist(carouselImages.length ? carouselImages : galleryImages));
+  var balancedImages = getBalancedGalleryImagesByArtist(carouselImages.length ? carouselImages : galleryImages);
+  // Keep the established 36-image baseline and add one complete four-image
+  // slide as each artist joins the directory, preserving the carousel rhythm.
+  var minimumCarouselCount = Math.max(36, 36 + Math.max(0, artistDisplayOrder.length - 5) * 4);
+  return normalizeCarouselImageCount(balancedImages, minimumCarouselCount);
 }
 
 function getShowcaseImages() {
